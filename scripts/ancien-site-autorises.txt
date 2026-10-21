@@ -19,3 +19,7 @@ taxe sur les véhicules de transport
 Fédération française des véhicules d'époque
 # Référence d'article citée telle quelle (délai d'un mois après une cession).
 article R322-5 du code de la route
+# Raison sociale et adresse postale officielles du fournisseur de Google Analytics, citées telles quelles (RGPD art. 13, identité du destinataire).
+Google Ireland Limited, Gordon House, Barrow Street, Dublin 4
+# Raison sociale et adresse postale officielles du fournisseur de Microsoft Clarity, citées telles quelles (RGPD art. 13, identité du destinataire).
+Microsoft Ireland Operations Limited, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18

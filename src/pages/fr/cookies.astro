@@ -4,31 +4,40 @@ import { CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, SITE_NAMES } from '../
 import { route } from '../../i18n/routes';
 const lang = 'fr';
 const title = `Cookies – ${SITE_NAMES[lang]}`;
-const description = GA4_ID ? 'Des cookies de mesure d’audience Google Analytics, et eux seuls : noms, finalité, durée de 13 mois au plus, fournisseur et moyens de vous y opposer.' : 'Le site ne dépose aucun cookie : vos saisies restent dans votre navigateur, rien n’est gardé sur votre appareil.';
+const description = 'Deux cookies Google Analytics pour l’audience, rien d’autre : leur rôle, leur durée limitée à 13 mois, qui les gère et comment les refuser. Clarity fonctionne sans cookie.';
+const gaCookie = `_ga_${GA4_ID.replace('G-', '')}`;
 ---
-{/* Page générée par scripts/gen-legal-pages.py (trame, décision GA4 du 2026-10-17). Ne pas
-     retoucher à la main : relancer le script. Un passage propre au site se garde entre
-     les marqueurs site:debut et site:fin. */}
+{/* Texte rédigé à la main pour ce site (formulation propre, distincte des autres sites de
+     l'éditeur). NE PAS relancer scripts/gen-legal-pages.py sur cette page : il l'écraserait.
+     Toute modification se fait ici, puis contrôle par npm run check et check-ancien-site.py. */}
 <PageLayout title={title} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Cookies</h1>
-    {GA4_ID ? (<>
-    <p>Le site dépose des cookies de mesure d’audience Google Analytics, et ceux-là seulement : ni cookie publicitaire, ni cookie de réseau social. Le détail des traitements figure dans la <a href={route('privacy', lang)}>politique de confidentialité</a>.</p>
-    <h2>Les cookies déposés</h2>
-    <table><thead><tr><th>Nom</th><th>Fournisseur</th><th>Finalité</th><th>Durée</th></tr></thead><tbody>
-    <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distinguer les visiteurs par un identifiant aléatoire</td><td>13 mois au plus (390 jours)</td></tr>
-    <tr><td><code>_ga_{GA4_ID.replace('G-', '')}</code></td><td>Google Analytics</td><td>Garder l’état de la visite en cours</td><td>13 mois au plus (390 jours)</td></tr>
+    {GA4_ID && (<>
+    <p>Sur ce site, les seuls cookies sont ceux de Google Analytics, qui servent à mesurer l’audience. Pas de cookie publicitaire, pas de cookie lié à un réseau social. L’ensemble des traitements est décrit dans la <a href={route('privacy', lang)}>politique de confidentialité</a>.</p>
+
+    <h2>Deux cookies, tous deux de Google Analytics</h2>
+    <table><thead><tr><th>Cookie</th><th>Rôle</th><th>Durée de vie</th><th>Déposé par</th></tr></thead><tbody>
+    <tr><td><code>_ga</code></td><td>Attribuer au visiteur un identifiant aléatoire</td><td>390 jours, soit 13 mois au plus</td><td>Google Analytics</td></tr>
+    <tr><td><code>{gaCookie}</code></td><td>Retenir où en est la visite en cours</td><td>390 jours, soit 13 mois au plus</td><td>Google Analytics</td></tr>
     </tbody></table>
-    <p>Ces durées ne sont pas prolongées à chaque visite ; Google prévoit 2 ans par défaut, le site les réduit. Finalité : mesure d’audience (pages vues, provenance, appareil, pays approximatif). L’adresse IP est anonymisée : Google Analytics 4 ne l’enregistre ni ne la conserve. Pas de publicité ni de partage publicitaire : le stockage publicitaire, la personnalisation des annonces et les signaux Google sont désactivés.</p>
-    <p>Fournisseur : Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande. Les données peuvent être transférées à Google LLC, aux États-Unis, dans le cadre du EU–U.S. Data Privacy Framework et des clauses contractuelles types de la Commission européenne. Conservation chez Google : 14 mois. Base juridique : l’intérêt légitime de l’éditeur (art. 6-1 f du RGPD).</p>
-    <h2>Vous opposer à ces cookies</h2>
-    <p>Bloquez ou supprimez les cookies dans les réglages de votre navigateur, ou installez le <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">module de désactivation de Google Analytics</a>. Le site et ses calculs fonctionnent alors de la même façon.</p>
-    </>) : (<>
-    <p>Le site <strong>ne dépose aucun cookie</strong>. Le détail des traitements figure dans la <a href={route('privacy', lang)}>politique de confidentialité</a>.</p>
+    <p>Google fixe par défaut cette durée à 2 ans ; le site l’a raccourcie, et une nouvelle visite ne la remet pas à zéro. Ce qu’ils permettent de mesurer : les pages vues, la provenance, l’appareil, un pays approximatif.</p>
+    <p>L’adresse IP est anonymisée, et Google Analytics 4 ne la garde ni ne l’enregistre. Côté publicité, rien n’est activé ni partagé : stockage publicitaire, personnalisation des annonces et signaux Google sont désactivés.</p>
+
+    <h2>Qui les gère, et pour combien de temps</h2>
+    <p>Ces cookies relèvent de Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande. Google peut transférer les données à Google LLC, aux États-Unis ; ce transfert repose sur le EU–U.S. Data Privacy Framework ainsi que sur les clauses contractuelles types de la Commission européenne. Google conserve les données 14 mois. Leur base juridique est l’intérêt légitime de l’éditeur, prévu à l’article 6-1 f du RGPD.</p>
+
+    <h2>Les refuser</h2>
+    <p>Deux possibilités s’offrent à vous. Bloquer ou effacer les cookies depuis les paramètres de votre navigateur ; ou bien installer le <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">module de désactivation de Google Analytics</a>. Dans les deux cas, le site et ses calculateurs restent pleinement utilisables.</p>
     </>)}
-    {CLARITY_ID && (<><h2>Microsoft Clarity, sans cookie</h2><p>La stabilité des pages est mesurée avec Microsoft Clarity en mode sans cookie : Clarity ne dépose aucun cookie, chaque page vue reçoit un identifiant à usage unique, le contenu des pages et vos saisies sont masqués. Bloquer <code>clarity.ms</code> l’arrête.</p></>)}
-    <h2>Vos saisies</h2>
-    <p>Les calculs se font dans votre navigateur : ce que vous saisissez n’est envoyé à aucun serveur et disparaît à la fermeture de la page.</p>
-    <p>Une question : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Mise à jour : {LAST_UPDATED}.</p>
+
+    {CLARITY_ID && (<>
+    <h2>Microsoft Clarity, sans cookie</h2>
+    <p>Microsoft Clarity sert à vérifier que les pages restent stables. Clarity est configuré pour fonctionner sans cookie ; chaque page vue reçoit un identifiant qui ne sert qu’une fois, tandis que vos saisies et ce qu’affichent les pages restent masqués. Pour arrêter Clarity, bloquez <code>clarity.ms</code>.</p>
+    </>)}
+
+    <h2>Ce que vous saisissez</h2>
+    <p>Vos saisies restent dans votre navigateur, qui fait lui-même les calculs : elles ne sont envoyées à aucun serveur et s’effacent dès que vous fermez la page.</p>
+    <p>Pour toute question : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Dernière révision : {LAST_UPDATED}.</p>
   </div>
 </PageLayout>
