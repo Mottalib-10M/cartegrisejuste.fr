@@ -1,6 +1,6 @@
 {
- "name": "Carte Grise Calcul",
- "short_name": "Carte Grise Calcul",
+ "name": "Carte Grise Juste",
+ "short_name": "Carte Grise Juste",
  "description": "Coût de la carte grise 2026 calculé case par case pour les 18 régions : taxe régionale, malus CO₂, malus au poids, taxe fixe et redevance, sans compte ni téléphone.",
  "start_url": "/fr/",
  "display": "standalone",

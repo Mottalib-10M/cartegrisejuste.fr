@@ -8,11 +8,11 @@ import { P } from '../../lib/engine/params';
 const lang = 'en';
 const verifiees = P.regions.filter((r) => r.deliberation).length;
 ---
-<PageLayout title="Carte Grise Calcul: who publishes this calculator and why" description="Who publishes Carte Grise Calcul, why a registration cost calculator that sells no paperwork service, where the 2026 rates come from and how to report errors." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
-  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">About Carte Grise Calcul</h1></header>
+<PageLayout title="Carte Grise Juste: who publishes this calculator and why" description="Who publishes Carte Grise Juste, why a registration cost calculator that sells no paperwork service, where the 2026 rates come from and how to report errors." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">About Carte Grise Juste</h1></header>
   <div class="prose prose-slate max-w-none">
     <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
-    <p>Carte Grise Calcul is a calculator published by Radif Partners. It answers one question, the one people ask just before buying a vehicle or moving house in France: how much will the registration certificate (the “carte grise”) cost, and why that amount?</p>
+    <p>Carte Grise Juste is a calculator published by Radif Partners. It answers one question, the one people ask just before buying a vehicle or moving house in France: how much will the registration certificate (the “carte grise”) cost, and why that amount?</p>
     <h2>A calculation, not a paperwork service</h2>
     <p>The site files no application, collects no documents and charges nothing. You apply for the certificate free of charge on the official ANTS website and only pay the taxes there. We say so on every page because many sites showing a registration price actually earn a service fee added on top, and do not always make that clear.</p>
     <h2>Why box by box</h2>

@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://cartegrisecalcul.fr/sitemap-index.xml
+Sitemap: https://cartegrisejuste.fr/sitemap-index.xml

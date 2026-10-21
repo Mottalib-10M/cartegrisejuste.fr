@@ -15,8 +15,8 @@ import { SITE_URL } from '../../data/site-config';
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
   <body class="bg-white p-2 text-navy-900">
-    <div id="w-fr"><CoutCalc client:load lang="fr" id="embed-fr" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/fr/`} target="_blank" rel="noopener" class="underline">Carte Grise Calcul</a> · calcul fait dans le navigateur · démarche gratuite sur le site de l’ANTS</p></div>
-    <div id="w-en" hidden><CoutCalc client:visible lang="en" id="embed-en" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/en/`} target="_blank" rel="noopener" class="underline">Carte Grise Calcul</a> · worked out in your browser · the ANTS application is free</p></div>
+    <div id="w-fr"><CoutCalc client:load lang="fr" id="embed-fr" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/fr/`} target="_blank" rel="noopener" class="underline">Carte Grise Juste</a> · calcul fait dans le navigateur · démarche gratuite sur le site de l’ANTS</p></div>
+    <div id="w-en" hidden><CoutCalc client:visible lang="en" id="embed-en" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/en/`} target="_blank" rel="noopener" class="underline">Carte Grise Juste</a> · worked out in your browser · the ANTS application is free</p></div>
     <script is:inline>
       if (new URLSearchParams(location.search).get('lang') === 'en') { document.getElementById('w-fr').hidden = true; document.getElementById('w-en').hidden = false; document.documentElement.lang = 'en'; }
     </script>

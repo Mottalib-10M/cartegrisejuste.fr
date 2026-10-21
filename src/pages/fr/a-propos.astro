@@ -8,11 +8,11 @@ import { P } from '../../lib/engine/params';
 const lang = 'fr';
 const verifiees = P.regions.filter((r) => r.deliberation).length;
 ---
-<PageLayout title="Carte Grise Calcul : qui édite ce calculateur et pourquoi" description="Qui édite Carte Grise Calcul, pourquoi un calcul de carte grise qui ne vend aucune démarche, d’où viennent les barèmes 2026 et comment nous signaler un écart." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path: route('about', lang) }])]} breadcrumbs={[{ label: 'À propos' }]}>
-  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">À propos de Carte Grise Calcul</h1></header>
+<PageLayout title="Carte Grise Juste : qui édite ce calculateur et pourquoi" description="Qui édite Carte Grise Juste, pourquoi un calcul de carte grise qui ne vend aucune démarche, d’où viennent les barèmes 2026 et comment nous signaler un écart." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path: route('about', lang) }])]} breadcrumbs={[{ label: 'À propos' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">À propos de Carte Grise Juste</h1></header>
   <div class="prose prose-slate max-w-none">
     <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
-    <p>Carte Grise Calcul est une calculatrice publiée par Radif Partners. Elle répond à une seule question, celle qu’on se pose juste avant d’acheter un véhicule ou de déménager : combien vais-je payer pour mon certificat d’immatriculation, et pourquoi ce montant ?</p>
+    <p>Carte Grise Juste est une calculatrice publiée par Radif Partners. Elle répond à une seule question, celle qu’on se pose juste avant d’acheter un véhicule ou de déménager : combien vais-je payer pour mon certificat d’immatriculation, et pourquoi ce montant ?</p>
     <h2>Un calcul, pas un service de démarche</h2>
     <p>Le site ne dépose aucune demande, ne collecte aucun justificatif et ne facture rien. La demande de certificat se fait gratuitement sur le site officiel de l’ANTS ; vous n’y réglez que les taxes. Nous l’écrivons sur chaque page parce que beaucoup de sites qui affichent un prix de carte grise vivent en réalité de frais de service ajoutés à ce prix, sans toujours le dire clairement.</p>
     <h2>Pourquoi un calcul case par case</h2>

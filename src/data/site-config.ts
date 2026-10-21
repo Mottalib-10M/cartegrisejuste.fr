@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://cartegrisecalcul.fr";
-export const SITE_NAMES: Record<string, string> = {"fr": "Carte Grise Calcul", "en": "Carte Grise Calcul"};
+export const SITE_URL = "https://cartegrisejuste.fr";
+export const SITE_NAMES: Record<string, string> = {"fr": "Carte Grise Juste", "en": "Carte Grise Juste"};
 export const LANG_TAGS: Record<string, string> = {"fr": "fr-FR", "en": "en-FR"};
 export const OG_LOCALES: Record<string, string> = {"fr": "fr_FR", "en": "en_GB"};
 export const LOCALE_TAG = 'fr-FR';
@@ -18,7 +18,7 @@ export const AUTHOR_DESC: Record<string, string> = {"fr": "Radif Partners code, 
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"fr": ["Certificat d'immatriculation (carte grise)", "Taxe régionale et tarif du cheval fiscal", "Malus écologique CO₂", "Malus sur la masse en ordre de marche", "Puissance administrative (chevaux fiscaux)", "Immatriculation d'un véhicule importé"], "en": ["French vehicle registration certificate (carte grise)", "Regional tax and fiscal horsepower rate", "French CO₂ malus", "French weight malus", "French fiscal horsepower (CV)", "Registering an imported car in France"]};
-export const CONTACT_EMAIL = "contact@cartegrisecalcul.fr";
+export const CONTACT_EMAIL = "contact@cartegrisejuste.fr";
 export const THEME_COLOR = '#1F5A44';
 export const LOGO_SYMBOL = 'CV';
 export const BING_VERIFY_CODE = '';

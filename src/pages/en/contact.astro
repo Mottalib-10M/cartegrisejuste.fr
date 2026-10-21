@@ -5,7 +5,7 @@ import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data
 import { route } from '../../i18n/routes';
 const lang = 'en';
 ---
-<PageLayout title={`Contact – ${SITE_NAMES[lang]}`} description="Write to the publisher of Carte Grise Calcul: report an outdated regional rate, a gap with the amount the ANTS charged, ask about the method or embed the calculator on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+<PageLayout title={`Contact – ${SITE_NAMES[lang]}`} description="Write to the publisher of Carte Grise Juste: report an outdated regional rate, a gap with the amount the ANTS charged, ask about the method or embed the calculator on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Contact</h1>
     <p>One address, read every week: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. No phone line and no sales call-back: the site sells neither paperwork nor referrals.</p>
@@ -17,6 +17,6 @@ const lang = 'en';
     <p>Drivers’ associations, garages, driving schools, newsrooms: the calculator can be embedded free of charge in an iframe. The code is on the <a href={route('widget', lang)}>Embed the calculator</a> page.</p>
     <h2>Publisher</h2>
     <LegalIdentity lang={lang} />
-    <p>{AUTHOR_NAME} is responsible for the content of Carte Grise Calcul; full details are in the <a href={route('terms', lang)}>legal notice</a>. Page reviewed on {LAST_UPDATED}.</p>
+    <p>{AUTHOR_NAME} is responsible for the content of Carte Grise Juste; full details are in the <a href={route('terms', lang)}>legal notice</a>. Page reviewed on {LAST_UPDATED}.</p>
   </div>
 </PageLayout>
