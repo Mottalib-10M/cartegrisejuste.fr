@@ -1,0 +1,24 @@
+---
+/** Page embarquable (iframe) : calcul complet sans navigation. noindex, hors sitemap (astro.config). `?lang=en` bascule la langue. */
+import '../../styles/global.css';
+import CoutCalc from '../../components/cg/CoutCalc';
+import { SITE_URL } from '../../data/site-config';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coût de la carte grise 2026 – widget</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}/fr/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <div id="w-fr"><CoutCalc client:load lang="fr" id="embed-fr" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/fr/`} target="_blank" rel="noopener" class="underline">Carte Grise Calcul</a> · calcul fait dans le navigateur · démarche gratuite sur le site de l’ANTS</p></div>
+    <div id="w-en" hidden><CoutCalc client:visible lang="en" id="embed-en" /><p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/en/`} target="_blank" rel="noopener" class="underline">Carte Grise Calcul</a> · worked out in your browser · the ANTS application is free</p></div>
+    <script is:inline>
+      if (new URLSearchParams(location.search).get('lang') === 'en') { document.getElementById('w-fr').hidden = true; document.getElementById('w-en').hidden = false; document.documentElement.lang = 'en'; }
+    </script>
+  </body>
+</html>

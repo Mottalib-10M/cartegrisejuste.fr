@@ -1,0 +1,3783 @@
+{
+ "_lisezmoi": "Fichier unique des barèmes du site : moteur, outils et textes lisent ces valeurs. Chaque valeur renvoie à une clé de « sources ». Vérification faite le 2026-10-20 à la source primaire (Légifrance, service-public.gouv.fr et son simulateur officiel).",
+ "year": 2026,
+ "retrieved_at": "2026-10-20",
+ "valid_from": "2026-01-01",
+ "valid_to": "2026-12-31",
+ "sources": {
+  "cibs": {
+   "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000044595989/LEGISCTA000044598969/2026-10-20",
+   "label": {
+    "fr": "Code des impositions sur les biens et services, art. L421-29 à L421-92 (Légifrance)",
+    "en": "French tax code on goods and services (CIBS), art. L421-29 to L421-92 (Légifrance)"
+   }
+  },
+  "l421_62": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051214838/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-62 : barèmes du malus CO₂ (WLTP)",
+    "en": "CIBS, art. L421-62: CO₂ malus scales (WLTP)"
+   }
+  },
+  "l421_7_2": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051180735/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-7-2 : coefficient de décote des véhicules importés",
+    "en": "CIBS, art. L421-7-2: depreciation coefficient for imported vehicles"
+   }
+  },
+  "l421_79": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053545019/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-79 : véhicules électriques exonérés du malus au poids",
+    "en": "CIBS, art. L421-79: electric vehicles exempt from the weight malus"
+   }
+  },
+  "l421_16": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044603283/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-16 : formule de la puissance administrative",
+    "en": "CIBS, art. L421-16: administrative horsepower formula"
+   }
+  },
+  "l421_17": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044603281/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-17 : puissance des deux-roues selon la cylindrée",
+    "en": "CIBS, art. L421-17: motorcycle horsepower by engine size"
+   }
+  },
+  "a421_26": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049803944/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. A421-26 : montants de la taxe sur les véhicules de transport",
+    "en": "CIBS, art. A421-26: transport vehicle tax amounts"
+   }
+  },
+  "idfm": {
+   "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000044595989/LEGISCTA000053530236/2026-10-20",
+   "label": {
+    "fr": "CIBS, art. L421-54-1 : majoration Île-de-France Mobilités",
+    "en": "CIBS, art. L421-54-1: Île-de-France Mobilités surcharge"
+   }
+  },
+  "lfi2026": {
+   "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053508155",
+   "label": {
+    "fr": "Loi n° 2026-103 du 19 février 2026 de finances pour 2026 (art. 58 et 60)",
+    "en": "Finance Act for 2026, law no. 2026-103 of 19 February 2026 (art. 58 and 60)"
+   }
+  },
+  "f19211": {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F19211",
+   "label": {
+    "fr": "Service-public.gouv.fr, fiche F19211 : coût du certificat d’immatriculation",
+    "en": "Service-public.gouv.fr, page F19211: registration certificate cost"
+   }
+  },
+  "f35947": {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35947",
+   "label": {
+    "fr": "Service-public.gouv.fr, fiche F35947 : malus CO₂",
+    "en": "Service-public.gouv.fr, page F35947: CO₂ malus"
+   }
+  },
+  "f35950": {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35950",
+   "label": {
+    "fr": "Service-public.gouv.fr, fiche F35950 : malus au poids",
+    "en": "Service-public.gouv.fr, page F35950: weight malus"
+   }
+  },
+  "f1726": {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1726",
+   "label": {
+    "fr": "Service-public.gouv.fr, fiche F1726 : duplicata",
+    "en": "Service-public.gouv.fr, page F1726: duplicate certificate"
+   }
+  },
+  "prixcv": {
+   "url": "https://www.service-public.gouv.fr/simulateur/calcul/PrixCV",
+   "label": {
+    "fr": "Simulateur officiel du prix du cheval fiscal (service-public.gouv.fr)",
+    "en": "Official fiscal horsepower price simulator (service-public.gouv.fr)"
+   }
+  },
+  "a18021": {
+   "url": "https://www.service-public.gouv.fr/particuliers/actualites/A18021",
+   "label": {
+    "fr": "Service-public.gouv.fr, actualité du 26 février 2026 sur les tarifs 2026",
+    "en": "Service-public.gouv.fr, news of 26 February 2026 on 2026 rates"
+   }
+  },
+  "a18244": {
+   "url": "https://www.service-public.gouv.fr/particuliers/actualites/A18244",
+   "label": {
+    "fr": "Service-public.gouv.fr, actualité du 2 mai 2025 sur les véhicules électriques",
+    "en": "Service-public.gouv.fr, news of 2 May 2025 on electric vehicles"
+   }
+  },
+  "r322_5": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035433240/2026-10-20",
+   "label": {
+    "fr": "Code de la route, art. R322-5 : délai d’un mois",
+    "en": "Highway Code, art. R322-5: one-month deadline"
+   }
+  },
+  "r49": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041765693/2026-10-20",
+   "label": {
+    "fr": "Code de procédure pénale, art. R49 : amende forfaitaire",
+    "en": "Code of Criminal Procedure, art. R49: fixed fine"
+   }
+  },
+  "cgi298": {
+   "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006314586/2026-10-20",
+   "label": {
+    "fr": "Code général des impôts, art. 298 sexies : moyen de transport neuf",
+    "en": "General Tax Code, art. 298 sexies: new means of transport"
+   }
+  },
+  "douane": {
+   "url": "https://www.douane.gouv.fr/fiche/achat-dun-vehicule-letranger-ou-dans-un-dom-com",
+   "label": {
+    "fr": "Douane : achat d’un véhicule à l’étranger",
+    "en": "French customs: buying a vehicle abroad"
+   }
+  },
+  "quitus": {
+   "url": "https://www.impots.gouv.fr/vous-etes-un-particulier-et-vous-souhaitez-obtenir-un-quitus-fiscal",
+   "label": {
+    "fr": "Impots.gouv.fr : obtenir un quitus fiscal",
+    "en": "Impots.gouv.fr: getting a tax clearance certificate"
+   }
+  },
+  "ants": {
+   "url": "https://immatriculation.ants.gouv.fr/",
+   "label": {
+    "fr": "ANTS : démarches d’immatriculation",
+    "en": "ANTS: registration procedures"
+   }
+  },
+  "delib_idf": {
+   "url": "https://www.iledefrance.fr/actes/deliberations/CR2023-052DEL.pdf",
+   "label": {
+    "fr": "Région Île-de-France, délibération CR 2023-052",
+    "en": "Île-de-France Region, resolution CR 2023-052"
+   }
+  },
+  "delib_hdf": {
+   "url": "https://sig.hautsdefrance.fr/ext/opendata/Administration_Elus/bp2026/BUDGET_PRINCIPAL_BUDGET_PRIMITIF_2026_Rapport.pdf",
+   "label": {
+    "fr": "Région Hauts-de-France, rapport du budget primitif 2026",
+    "en": "Hauts-de-France Region, 2026 budget report"
+   }
+  },
+  "delib_na": {
+   "url": "https://www.nouvelle-aquitaine.fr/sites/default/files/2026-04/PV_adopte_CRNA_SP_18_d%C3%A9cembre_2025.pdf",
+   "label": {
+    "fr": "Région Nouvelle-Aquitaine, procès-verbal de la séance du 18 décembre 2025",
+    "en": "Nouvelle-Aquitaine Region, minutes of 18 December 2025"
+   }
+  },
+  "delib_paca": {
+   "url": "https://ceser.maregionsud.fr/fileadmin/user_upload/Annuaire/Avis_et_Documents/ECONOMIE/2025.10.15_Fixation_du_tarif_2026_de_la_taxe_r%C3%A9gionale_sur_les_certificats_d_immatriculation_des_v%C3%A9hicules.pdf",
+   "label": {
+    "fr": "CESER Provence-Alpes-Côte d’Azur, avis du 15 octobre 2025 sur le tarif 2026",
+    "en": "PACA economic council, opinion of 15 October 2025 on the 2026 rate"
+   }
+  },
+  "delib_corse": {
+   "url": "https://www.isula.corsica/assemblea/docs/rapports/2025O2290.pdf",
+   "label": {
+    "fr": "Assemblée de Corse, rapport sur le tarif 2026",
+    "en": "Corsican Assembly, report on the 2026 rate"
+   }
+  }
+ },
+ "national": {
+  "taxe_fixe": 11,
+  "redevance": 2.76,
+  "amende_titulaire": 135,
+  "delai_titulaire_mois": 1,
+  "adresse_gratuits": 3,
+  "sources": [
+   "cibs",
+   "f19211",
+   "r322_5",
+   "r49"
+  ]
+ },
+ "regional": {
+  "plafond_cv": 60,
+  "age_reduction_ans": 10,
+  "taux_reduction_age": 0.5,
+  "coef_genre": {
+   "vp": [
+    1,
+    0.5
+   ],
+   "utilitaire": [
+    1,
+    0.5
+   ],
+   "camping_car": [
+    1,
+    0.5
+   ],
+   "moto": [
+    0.5,
+    0.5
+   ],
+   "cyclo": [
+    0,
+    0
+   ]
+  },
+  "demarches": {
+   "immat": {
+    "y1": true,
+    "y2": true,
+    "y4": true,
+    "y5": true
+   },
+   "titulaire": {
+    "y1": true,
+    "y2": true,
+    "y4": true,
+    "y5": true
+   },
+   "succession": {
+    "y1": true,
+    "y2": true,
+    "y4": true,
+    "y5": true
+   },
+   "adresse": {
+    "y1": false,
+    "y2": false,
+    "y4": false,
+    "y5": true
+   },
+   "duplicata": {
+    "y1": false,
+    "y2": false,
+    "y4": true,
+    "y5": true
+   },
+   "conjoint": {
+    "y1": false,
+    "y2": false,
+    "y4": true,
+    "y5": true
+   }
+  },
+  "date_releve": "2026-10-20",
+  "valeurs_source": "prixcv",
+  "poids_lourd": {
+   "ptac_min_exclu": 3500,
+   "coef": 0.5,
+   "article": "L421-47"
+  }
+ },
+ "idfm": {
+  "periodes": [
+   {
+    "from": "2026-03-01",
+    "to": "2026-12-31",
+    "cv": 14
+   },
+   {
+    "from": "2027-01-01",
+    "to": null,
+    "cv": 12
+   }
+  ],
+  "plafond_legal": 13,
+  "sources": [
+   "idfm",
+   "lfi2026"
+  ]
+ },
+ "regions": [
+  {
+   "id": "auvergne-rhone-alpes",
+   "nom": {
+    "fr": "Auvergne-Rhône-Alpes",
+    "en": "Auvergne-Rhône-Alpes"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": null,
+     "cv": 43,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "bourgogne-franche-comte",
+   "nom": {
+    "fr": "Bourgogne-Franche-Comté",
+    "en": "Bourgogne-Franche-Comté"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-07-01",
+     "cv": 60,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "bretagne",
+   "nom": {
+    "fr": "Bretagne",
+    "en": "Brittany"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-02-01",
+     "cv": 60,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "centre-val-de-loire",
+   "nom": {
+    "fr": "Centre-Val de Loire",
+    "en": "Centre-Val de Loire"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-01-01",
+     "cv": 60,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "corse",
+   "nom": {
+    "fr": "Corse",
+    "en": "Corsica"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-01-01",
+     "cv": 43,
+     "date_verifiee": false
+    },
+    {
+     "from": "2026-01-01",
+     "cv": 53,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": "delib_corse",
+   "propres": []
+  },
+  {
+   "id": "grand-est",
+   "nom": {
+    "fr": "Grand Est",
+    "en": "Grand Est"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-02-01",
+     "cv": 60,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "hauts-de-france",
+   "nom": {
+    "fr": "Hauts-de-France",
+    "en": "Hauts-de-France"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-03-01",
+     "cv": 42,
+     "date_verifiee": true
+    },
+    {
+     "from": "2026-04-01",
+     "cv": 43,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": "delib_hdf",
+   "propres": [
+    {
+     "from": "2025-05-01",
+     "to": "2026-03-31",
+     "exo": 1,
+     "energies": [
+      "electrique",
+      "hydrogene"
+     ]
+    },
+    {
+     "from": "2026-04-01",
+     "to": null,
+     "exo": 0.5,
+     "energies": [
+      "electrique",
+      "hydrogene"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ile-de-france",
+   "nom": {
+    "fr": "Île-de-France",
+    "en": "Île-de-France"
+   },
+   "om": false,
+   "idfm": true,
+   "tarifs": [
+    {
+     "from": "2024-01-01",
+     "cv": 54.95,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": "delib_idf",
+   "propres": []
+  },
+  {
+   "id": "normandie",
+   "nom": {
+    "fr": "Normandie",
+    "en": "Normandy"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-01-01",
+     "cv": 60,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "nouvelle-aquitaine",
+   "nom": {
+    "fr": "Nouvelle-Aquitaine",
+    "en": "Nouvelle-Aquitaine"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": null,
+     "cv": 53,
+     "date_verifiee": false
+    },
+    {
+     "from": "2026-03-01",
+     "cv": 58,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": "delib_na",
+   "propres": []
+  },
+  {
+   "id": "occitanie",
+   "nom": {
+    "fr": "Occitanie",
+    "en": "Occitanie"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-07-01",
+     "cv": 59.5,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "pays-de-la-loire",
+   "nom": {
+    "fr": "Pays de la Loire",
+    "en": "Pays de la Loire"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2023-01-01",
+     "cv": 51,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "provence-alpes-cote-dazur",
+   "nom": {
+    "fr": "Provence-Alpes-Côte d’Azur",
+    "en": "Provence-Alpes-Côte d’Azur"
+   },
+   "om": false,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-01-01",
+     "cv": 59,
+     "date_verifiee": false
+    },
+    {
+     "from": "2026-01-01",
+     "cv": 60,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": "delib_paca",
+   "propres": []
+  },
+  {
+   "id": "guadeloupe",
+   "nom": {
+    "fr": "Guadeloupe",
+    "en": "Guadeloupe"
+   },
+   "om": true,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": null,
+     "cv": 41,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "guyane",
+   "nom": {
+    "fr": "Guyane",
+    "en": "French Guiana"
+   },
+   "om": true,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": null,
+     "cv": 42.5,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "la-reunion",
+   "nom": {
+    "fr": "La Réunion",
+    "en": "Réunion"
+   },
+   "om": true,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-02-01",
+     "cv": 57,
+     "date_verifiee": false
+    },
+    {
+     "from": "2026-02-01",
+     "cv": 60,
+     "date_verifiee": true
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "martinique",
+   "nom": {
+    "fr": "Martinique",
+    "en": "Martinique"
+   },
+   "om": true,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": "2025-07-01",
+     "cv": 53,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  },
+  {
+   "id": "mayotte",
+   "nom": {
+    "fr": "Mayotte",
+    "en": "Mayotte"
+   },
+   "om": true,
+   "idfm": false,
+   "tarifs": [
+    {
+     "from": null,
+     "cv": 30,
+     "date_verifiee": false
+    }
+   ],
+   "deliberation": null,
+   "propres": []
+  }
+ ],
+ "malus_co2": {
+  "famille": {
+   "enfants_min": 3,
+   "g_par_enfant": 20,
+   "cv_par_enfant": 1
+  },
+  "e85": {
+   "abattement": 0.4,
+   "taux_max_gkm": 250
+  },
+  "premiere_annee_wltp": "2020-01-01",
+  "annees": {
+   "2020": {
+    "from": "2020-01-01",
+    "seuil": 138,
+    "plafond": 20000,
+    "plafond_des": 213,
+    "grille": [
+     [
+      138,
+      50
+     ],
+     [
+      139,
+      75
+     ],
+     [
+      140,
+      100
+     ],
+     [
+      141,
+      125
+     ],
+     [
+      142,
+      150
+     ],
+     [
+      143,
+      170
+     ],
+     [
+      144,
+      190
+     ],
+     [
+      145,
+      210
+     ],
+     [
+      146,
+      230
+     ],
+     [
+      147,
+      240
+     ],
+     [
+      148,
+      260
+     ],
+     [
+      149,
+      280
+     ],
+     [
+      150,
+      310
+     ],
+     [
+      151,
+      330
+     ],
+     [
+      152,
+      360
+     ],
+     [
+      153,
+      400
+     ],
+     [
+      154,
+      450
+     ],
+     [
+      155,
+      540
+     ],
+     [
+      156,
+      650
+     ],
+     [
+      157,
+      740
+     ],
+     [
+      158,
+      818
+     ],
+     [
+      159,
+      898
+     ],
+     [
+      160,
+      983
+     ],
+     [
+      161,
+      1074
+     ],
+     [
+      162,
+      1172
+     ],
+     [
+      163,
+      1276
+     ],
+     [
+      164,
+      1386
+     ],
+     [
+      165,
+      1504
+     ],
+     [
+      166,
+      1629
+     ],
+     [
+      167,
+      1761
+     ],
+     [
+      168,
+      1901
+     ],
+     [
+      169,
+      2049
+     ],
+     [
+      170,
+      2205
+     ],
+     [
+      171,
+      2370
+     ],
+     [
+      172,
+      2544
+     ],
+     [
+      173,
+      2726
+     ],
+     [
+      174,
+      2918
+     ],
+     [
+      175,
+      3119
+     ],
+     [
+      176,
+      3331
+     ],
+     [
+      177,
+      3552
+     ],
+     [
+      178,
+      3784
+     ],
+     [
+      179,
+      4026
+     ],
+     [
+      180,
+      4279
+     ],
+     [
+      181,
+      4543
+     ],
+     [
+      182,
+      4818
+     ],
+     [
+      183,
+      5105
+     ],
+     [
+      184,
+      5404
+     ],
+     [
+      185,
+      5715
+     ],
+     [
+      186,
+      6039
+     ],
+     [
+      187,
+      6375
+     ],
+     [
+      188,
+      6724
+     ],
+     [
+      189,
+      7086
+     ],
+     [
+      190,
+      7462
+     ],
+     [
+      191,
+      7851
+     ],
+     [
+      192,
+      8254
+     ],
+     [
+      193,
+      8671
+     ],
+     [
+      194,
+      9103
+     ],
+     [
+      195,
+      9550
+     ],
+     [
+      196,
+      10011
+     ],
+     [
+      197,
+      10488
+     ],
+     [
+      198,
+      10980
+     ],
+     [
+      199,
+      11488
+     ],
+     [
+      200,
+      12012
+     ],
+     [
+      201,
+      12552
+     ],
+     [
+      202,
+      13109
+     ],
+     [
+      203,
+      13682
+     ],
+     [
+      204,
+      14273
+     ],
+     [
+      205,
+      14881
+     ],
+     [
+      206,
+      15506
+     ],
+     [
+      207,
+      16149
+     ],
+     [
+      208,
+      16810
+     ],
+     [
+      209,
+      17490
+     ],
+     [
+      210,
+      18188
+     ],
+     [
+      211,
+      18905
+     ],
+     [
+      212,
+      19641
+     ]
+    ]
+   },
+   "2021": {
+    "from": "2021-01-01",
+    "seuil": 133,
+    "plafond": 30000,
+    "plafond_des": 219,
+    "grille": [
+     [
+      133,
+      50
+     ],
+     [
+      134,
+      75
+     ],
+     [
+      135,
+      100
+     ],
+     [
+      136,
+      125
+     ],
+     [
+      137,
+      150
+     ],
+     [
+      138,
+      170
+     ],
+     [
+      139,
+      190
+     ],
+     [
+      140,
+      210
+     ],
+     [
+      141,
+      230
+     ],
+     [
+      142,
+      240
+     ],
+     [
+      143,
+      260
+     ],
+     [
+      144,
+      280
+     ],
+     [
+      145,
+      310
+     ],
+     [
+      146,
+      330
+     ],
+     [
+      147,
+      360
+     ],
+     [
+      148,
+      400
+     ],
+     [
+      149,
+      450
+     ],
+     [
+      150,
+      540
+     ],
+     [
+      151,
+      650
+     ],
+     [
+      152,
+      740
+     ],
+     [
+      153,
+      818
+     ],
+     [
+      154,
+      898
+     ],
+     [
+      155,
+      983
+     ],
+     [
+      156,
+      1074
+     ],
+     [
+      157,
+      1172
+     ],
+     [
+      158,
+      1276
+     ],
+     [
+      159,
+      1386
+     ],
+     [
+      160,
+      1504
+     ],
+     [
+      161,
+      1629
+     ],
+     [
+      162,
+      1761
+     ],
+     [
+      163,
+      1901
+     ],
+     [
+      164,
+      2049
+     ],
+     [
+      165,
+      2205
+     ],
+     [
+      166,
+      2370
+     ],
+     [
+      167,
+      2544
+     ],
+     [
+      168,
+      2726
+     ],
+     [
+      169,
+      2918
+     ],
+     [
+      170,
+      3119
+     ],
+     [
+      171,
+      3331
+     ],
+     [
+      172,
+      3552
+     ],
+     [
+      173,
+      3784
+     ],
+     [
+      174,
+      4026
+     ],
+     [
+      175,
+      4279
+     ],
+     [
+      176,
+      4543
+     ],
+     [
+      177,
+      4818
+     ],
+     [
+      178,
+      5105
+     ],
+     [
+      179,
+      5404
+     ],
+     [
+      180,
+      5715
+     ],
+     [
+      181,
+      6039
+     ],
+     [
+      182,
+      6375
+     ],
+     [
+      183,
+      6724
+     ],
+     [
+      184,
+      7086
+     ],
+     [
+      185,
+      7462
+     ],
+     [
+      186,
+      7851
+     ],
+     [
+      187,
+      8254
+     ],
+     [
+      188,
+      8671
+     ],
+     [
+      189,
+      9103
+     ],
+     [
+      190,
+      9550
+     ],
+     [
+      191,
+      10011
+     ],
+     [
+      192,
+      10488
+     ],
+     [
+      193,
+      10980
+     ],
+     [
+      194,
+      11488
+     ],
+     [
+      195,
+      12012
+     ],
+     [
+      196,
+      12552
+     ],
+     [
+      197,
+      13109
+     ],
+     [
+      198,
+      13682
+     ],
+     [
+      199,
+      14273
+     ],
+     [
+      200,
+      14881
+     ],
+     [
+      201,
+      15506
+     ],
+     [
+      202,
+      16149
+     ],
+     [
+      203,
+      16810
+     ],
+     [
+      204,
+      17490
+     ],
+     [
+      205,
+      18188
+     ],
+     [
+      206,
+      18905
+     ],
+     [
+      207,
+      19641
+     ],
+     [
+      208,
+      20396
+     ],
+     [
+      209,
+      21171
+     ],
+     [
+      210,
+      21966
+     ],
+     [
+      211,
+      22781
+     ],
+     [
+      212,
+      23616
+     ],
+     [
+      213,
+      24472
+     ],
+     [
+      214,
+      25349
+     ],
+     [
+      215,
+      26247
+     ],
+     [
+      216,
+      27166
+     ],
+     [
+      217,
+      28107
+     ],
+     [
+      218,
+      29070
+     ]
+    ]
+   },
+   "2022": {
+    "from": "2022-01-01",
+    "seuil": 128,
+    "plafond": 40000,
+    "plafond_des": 224,
+    "grille": [
+     [
+      128,
+      50
+     ],
+     [
+      129,
+      75
+     ],
+     [
+      130,
+      100
+     ],
+     [
+      131,
+      125
+     ],
+     [
+      132,
+      150
+     ],
+     [
+      133,
+      170
+     ],
+     [
+      134,
+      190
+     ],
+     [
+      135,
+      210
+     ],
+     [
+      136,
+      230
+     ],
+     [
+      137,
+      240
+     ],
+     [
+      138,
+      260
+     ],
+     [
+      139,
+      280
+     ],
+     [
+      140,
+      310
+     ],
+     [
+      141,
+      330
+     ],
+     [
+      142,
+      360
+     ],
+     [
+      143,
+      400
+     ],
+     [
+      144,
+      450
+     ],
+     [
+      145,
+      540
+     ],
+     [
+      146,
+      650
+     ],
+     [
+      147,
+      740
+     ],
+     [
+      148,
+      818
+     ],
+     [
+      149,
+      898
+     ],
+     [
+      150,
+      983
+     ],
+     [
+      151,
+      1074
+     ],
+     [
+      152,
+      1172
+     ],
+     [
+      153,
+      1276
+     ],
+     [
+      154,
+      1386
+     ],
+     [
+      155,
+      1504
+     ],
+     [
+      156,
+      1629
+     ],
+     [
+      157,
+      1761
+     ],
+     [
+      158,
+      1901
+     ],
+     [
+      159,
+      2049
+     ],
+     [
+      160,
+      2205
+     ],
+     [
+      161,
+      2370
+     ],
+     [
+      162,
+      2544
+     ],
+     [
+      163,
+      2726
+     ],
+     [
+      164,
+      2918
+     ],
+     [
+      165,
+      3119
+     ],
+     [
+      166,
+      3331
+     ],
+     [
+      167,
+      3552
+     ],
+     [
+      168,
+      3784
+     ],
+     [
+      169,
+      4026
+     ],
+     [
+      170,
+      4279
+     ],
+     [
+      171,
+      4543
+     ],
+     [
+      172,
+      4818
+     ],
+     [
+      173,
+      5105
+     ],
+     [
+      174,
+      5404
+     ],
+     [
+      175,
+      5715
+     ],
+     [
+      176,
+      6039
+     ],
+     [
+      177,
+      6375
+     ],
+     [
+      178,
+      6724
+     ],
+     [
+      179,
+      7086
+     ],
+     [
+      180,
+      7462
+     ],
+     [
+      181,
+      7851
+     ],
+     [
+      182,
+      8254
+     ],
+     [
+      183,
+      8671
+     ],
+     [
+      184,
+      9103
+     ],
+     [
+      185,
+      9550
+     ],
+     [
+      186,
+      10011
+     ],
+     [
+      187,
+      10488
+     ],
+     [
+      188,
+      10980
+     ],
+     [
+      189,
+      11488
+     ],
+     [
+      190,
+      12012
+     ],
+     [
+      191,
+      12552
+     ],
+     [
+      192,
+      13109
+     ],
+     [
+      193,
+      13682
+     ],
+     [
+      194,
+      14273
+     ],
+     [
+      195,
+      14881
+     ],
+     [
+      196,
+      15506
+     ],
+     [
+      197,
+      16149
+     ],
+     [
+      198,
+      16810
+     ],
+     [
+      199,
+      17490
+     ],
+     [
+      200,
+      18188
+     ],
+     [
+      201,
+      18905
+     ],
+     [
+      202,
+      19641
+     ],
+     [
+      203,
+      20396
+     ],
+     [
+      204,
+      21171
+     ],
+     [
+      205,
+      21966
+     ],
+     [
+      206,
+      22781
+     ],
+     [
+      207,
+      23616
+     ],
+     [
+      208,
+      24472
+     ],
+     [
+      209,
+      25349
+     ],
+     [
+      210,
+      26247
+     ],
+     [
+      211,
+      27166
+     ],
+     [
+      212,
+      28107
+     ],
+     [
+      213,
+      29070
+     ],
+     [
+      214,
+      30056
+     ],
+     [
+      215,
+      31063
+     ],
+     [
+      216,
+      32094
+     ],
+     [
+      217,
+      33147
+     ],
+     [
+      218,
+      34224
+     ],
+     [
+      219,
+      35324
+     ],
+     [
+      220,
+      36447
+     ],
+     [
+      221,
+      37595
+     ],
+     [
+      222,
+      38767
+     ],
+     [
+      223,
+      39964
+     ]
+    ]
+   },
+   "2023": {
+    "from": "2023-01-01",
+    "seuil": 123,
+    "plafond": 50000,
+    "plafond_des": 226,
+    "grille": [
+     [
+      123,
+      50
+     ],
+     [
+      124,
+      75
+     ],
+     [
+      125,
+      100
+     ],
+     [
+      126,
+      125
+     ],
+     [
+      127,
+      150
+     ],
+     [
+      128,
+      170
+     ],
+     [
+      129,
+      190
+     ],
+     [
+      130,
+      210
+     ],
+     [
+      131,
+      230
+     ],
+     [
+      132,
+      240
+     ],
+     [
+      133,
+      260
+     ],
+     [
+      134,
+      280
+     ],
+     [
+      135,
+      310
+     ],
+     [
+      136,
+      330
+     ],
+     [
+      137,
+      360
+     ],
+     [
+      138,
+      400
+     ],
+     [
+      139,
+      450
+     ],
+     [
+      140,
+      540
+     ],
+     [
+      141,
+      650
+     ],
+     [
+      142,
+      740
+     ],
+     [
+      143,
+      818
+     ],
+     [
+      144,
+      898
+     ],
+     [
+      145,
+      983
+     ],
+     [
+      146,
+      1074
+     ],
+     [
+      147,
+      1172
+     ],
+     [
+      148,
+      1276
+     ],
+     [
+      149,
+      1386
+     ],
+     [
+      150,
+      1504
+     ],
+     [
+      151,
+      1629
+     ],
+     [
+      152,
+      1761
+     ],
+     [
+      153,
+      1901
+     ],
+     [
+      154,
+      2049
+     ],
+     [
+      155,
+      2205
+     ],
+     [
+      156,
+      2370
+     ],
+     [
+      157,
+      2544
+     ],
+     [
+      158,
+      2726
+     ],
+     [
+      159,
+      2918
+     ],
+     [
+      160,
+      3119
+     ],
+     [
+      161,
+      3331
+     ],
+     [
+      162,
+      3552
+     ],
+     [
+      163,
+      3784
+     ],
+     [
+      164,
+      4026
+     ],
+     [
+      165,
+      4279
+     ],
+     [
+      166,
+      4543
+     ],
+     [
+      167,
+      4818
+     ],
+     [
+      168,
+      5105
+     ],
+     [
+      169,
+      5404
+     ],
+     [
+      170,
+      5715
+     ],
+     [
+      171,
+      6039
+     ],
+     [
+      172,
+      6375
+     ],
+     [
+      173,
+      6724
+     ],
+     [
+      174,
+      7086
+     ],
+     [
+      175,
+      7462
+     ],
+     [
+      176,
+      7851
+     ],
+     [
+      177,
+      8254
+     ],
+     [
+      178,
+      8671
+     ],
+     [
+      179,
+      9103
+     ],
+     [
+      180,
+      9550
+     ],
+     [
+      181,
+      10011
+     ],
+     [
+      182,
+      10488
+     ],
+     [
+      183,
+      10980
+     ],
+     [
+      184,
+      11488
+     ],
+     [
+      185,
+      12012
+     ],
+     [
+      186,
+      12552
+     ],
+     [
+      187,
+      13109
+     ],
+     [
+      188,
+      13682
+     ],
+     [
+      189,
+      14273
+     ],
+     [
+      190,
+      14881
+     ],
+     [
+      191,
+      15506
+     ],
+     [
+      192,
+      16149
+     ],
+     [
+      193,
+      16810
+     ],
+     [
+      194,
+      17490
+     ],
+     [
+      195,
+      18188
+     ],
+     [
+      196,
+      18905
+     ],
+     [
+      197,
+      19641
+     ],
+     [
+      198,
+      20396
+     ],
+     [
+      199,
+      21171
+     ],
+     [
+      200,
+      21966
+     ],
+     [
+      201,
+      22781
+     ],
+     [
+      202,
+      23616
+     ],
+     [
+      203,
+      24472
+     ],
+     [
+      204,
+      25349
+     ],
+     [
+      205,
+      26247
+     ],
+     [
+      206,
+      27166
+     ],
+     [
+      207,
+      28107
+     ],
+     [
+      208,
+      29070
+     ],
+     [
+      209,
+      30056
+     ],
+     [
+      210,
+      31063
+     ],
+     [
+      211,
+      32094
+     ],
+     [
+      212,
+      33147
+     ],
+     [
+      213,
+      34224
+     ],
+     [
+      214,
+      35324
+     ],
+     [
+      215,
+      36447
+     ],
+     [
+      216,
+      37595
+     ],
+     [
+      217,
+      38767
+     ],
+     [
+      218,
+      39964
+     ],
+     [
+      219,
+      41185
+     ],
+     [
+      220,
+      42431
+     ],
+     [
+      221,
+      43703
+     ],
+     [
+      222,
+      45000
+     ],
+     [
+      223,
+      46323
+     ],
+     [
+      224,
+      47672
+     ],
+     [
+      225,
+      49047
+     ]
+    ]
+   },
+   "2024": {
+    "from": "2024-01-01",
+    "seuil": 118,
+    "plafond": 60000,
+    "plafond_des": 194,
+    "grille": [
+     [
+      118,
+      50
+     ],
+     [
+      119,
+      75
+     ],
+     [
+      120,
+      100
+     ],
+     [
+      121,
+      125
+     ],
+     [
+      122,
+      150
+     ],
+     [
+      123,
+      170
+     ],
+     [
+      124,
+      190
+     ],
+     [
+      125,
+      210
+     ],
+     [
+      126,
+      230
+     ],
+     [
+      127,
+      240
+     ],
+     [
+      128,
+      260
+     ],
+     [
+      129,
+      280
+     ],
+     [
+      130,
+      310
+     ],
+     [
+      131,
+      330
+     ],
+     [
+      132,
+      360
+     ],
+     [
+      133,
+      400
+     ],
+     [
+      134,
+      450
+     ],
+     [
+      135,
+      540
+     ],
+     [
+      136,
+      650
+     ],
+     [
+      137,
+      740
+     ],
+     [
+      138,
+      818
+     ],
+     [
+      139,
+      898
+     ],
+     [
+      140,
+      983
+     ],
+     [
+      141,
+      1074
+     ],
+     [
+      142,
+      1172
+     ],
+     [
+      143,
+      1276
+     ],
+     [
+      144,
+      1386
+     ],
+     [
+      145,
+      1504
+     ],
+     [
+      146,
+      1629
+     ],
+     [
+      147,
+      1761
+     ],
+     [
+      148,
+      1901
+     ],
+     [
+      149,
+      2049
+     ],
+     [
+      150,
+      2205
+     ],
+     [
+      151,
+      2370
+     ],
+     [
+      152,
+      2544
+     ],
+     [
+      153,
+      2726
+     ],
+     [
+      154,
+      2918
+     ],
+     [
+      155,
+      3119
+     ],
+     [
+      156,
+      3331
+     ],
+     [
+      157,
+      3552
+     ],
+     [
+      158,
+      3784
+     ],
+     [
+      159,
+      4026
+     ],
+     [
+      160,
+      4279
+     ],
+     [
+      161,
+      4543
+     ],
+     [
+      162,
+      4818
+     ],
+     [
+      163,
+      5105
+     ],
+     [
+      164,
+      5404
+     ],
+     [
+      165,
+      5715
+     ],
+     [
+      166,
+      6126
+     ],
+     [
+      167,
+      6537
+     ],
+     [
+      168,
+      7248
+     ],
+     [
+      169,
+      7959
+     ],
+     [
+      170,
+      8770
+     ],
+     [
+      171,
+      9681
+     ],
+     [
+      172,
+      10692
+     ],
+     [
+      173,
+      11803
+     ],
+     [
+      174,
+      13014
+     ],
+     [
+      175,
+      14325
+     ],
+     [
+      176,
+      15736
+     ],
+     [
+      177,
+      17247
+     ],
+     [
+      178,
+      18858
+     ],
+     [
+      179,
+      20569
+     ],
+     [
+      180,
+      22380
+     ],
+     [
+      181,
+      24291
+     ],
+     [
+      182,
+      26302
+     ],
+     [
+      183,
+      28413
+     ],
+     [
+      184,
+      30624
+     ],
+     [
+      185,
+      32935
+     ],
+     [
+      186,
+      35346
+     ],
+     [
+      187,
+      37857
+     ],
+     [
+      188,
+      40468
+     ],
+     [
+      189,
+      43179
+     ],
+     [
+      190,
+      45990
+     ],
+     [
+      191,
+      48901
+     ],
+     [
+      192,
+      51912
+     ],
+     [
+      193,
+      55023
+     ]
+    ]
+   },
+   "2025": {
+    "from": "2025-03-01",
+    "seuil": 113,
+    "plafond": 70000,
+    "plafond_des": 193,
+    "grille": [
+     [
+      113,
+      50
+     ],
+     [
+      114,
+      75
+     ],
+     [
+      115,
+      100
+     ],
+     [
+      116,
+      125
+     ],
+     [
+      117,
+      150
+     ],
+     [
+      118,
+      170
+     ],
+     [
+      119,
+      190
+     ],
+     [
+      120,
+      210
+     ],
+     [
+      121,
+      230
+     ],
+     [
+      122,
+      240
+     ],
+     [
+      123,
+      260
+     ],
+     [
+      124,
+      280
+     ],
+     [
+      125,
+      310
+     ],
+     [
+      126,
+      330
+     ],
+     [
+      127,
+      360
+     ],
+     [
+      128,
+      400
+     ],
+     [
+      129,
+      450
+     ],
+     [
+      130,
+      540
+     ],
+     [
+      131,
+      650
+     ],
+     [
+      132,
+      740
+     ],
+     [
+      133,
+      818
+     ],
+     [
+      134,
+      898
+     ],
+     [
+      135,
+      983
+     ],
+     [
+      136,
+      1074
+     ],
+     [
+      137,
+      1172
+     ],
+     [
+      138,
+      1276
+     ],
+     [
+      139,
+      1386
+     ],
+     [
+      140,
+      1504
+     ],
+     [
+      141,
+      1629
+     ],
+     [
+      142,
+      1761
+     ],
+     [
+      143,
+      1901
+     ],
+     [
+      144,
+      2049
+     ],
+     [
+      145,
+      2205
+     ],
+     [
+      146,
+      2370
+     ],
+     [
+      147,
+      2544
+     ],
+     [
+      148,
+      2726
+     ],
+     [
+      149,
+      2918
+     ],
+     [
+      150,
+      3119
+     ],
+     [
+      151,
+      3331
+     ],
+     [
+      152,
+      3552
+     ],
+     [
+      153,
+      3784
+     ],
+     [
+      154,
+      4026
+     ],
+     [
+      155,
+      4279
+     ],
+     [
+      156,
+      4543
+     ],
+     [
+      157,
+      4818
+     ],
+     [
+      158,
+      5105
+     ],
+     [
+      159,
+      5404
+     ],
+     [
+      160,
+      5715
+     ],
+     [
+      161,
+      6126
+     ],
+     [
+      162,
+      6637
+     ],
+     [
+      163,
+      7248
+     ],
+     [
+      164,
+      7959
+     ],
+     [
+      165,
+      8770
+     ],
+     [
+      166,
+      9681
+     ],
+     [
+      167,
+      10692
+     ],
+     [
+      168,
+      11803
+     ],
+     [
+      169,
+      13014
+     ],
+     [
+      170,
+      14325
+     ],
+     [
+      171,
+      15736
+     ],
+     [
+      172,
+      17247
+     ],
+     [
+      173,
+      18858
+     ],
+     [
+      174,
+      20569
+     ],
+     [
+      175,
+      22380
+     ],
+     [
+      176,
+      24291
+     ],
+     [
+      177,
+      26302
+     ],
+     [
+      178,
+      28413
+     ],
+     [
+      179,
+      30624
+     ],
+     [
+      180,
+      32935
+     ],
+     [
+      181,
+      35346
+     ],
+     [
+      182,
+      37857
+     ],
+     [
+      183,
+      40468
+     ],
+     [
+      184,
+      43179
+     ],
+     [
+      185,
+      45990
+     ],
+     [
+      186,
+      48901
+     ],
+     [
+      187,
+      51912
+     ],
+     [
+      188,
+      55023
+     ],
+     [
+      189,
+      58134
+     ],
+     [
+      190,
+      61245
+     ],
+     [
+      191,
+      64356
+     ],
+     [
+      192,
+      67467
+     ]
+    ]
+   },
+   "2026": {
+    "from": "2026-01-01",
+    "seuil": 108,
+    "plafond": 80000,
+    "plafond_des": 192,
+    "grille": [
+     [
+      108,
+      50
+     ],
+     [
+      109,
+      75
+     ],
+     [
+      110,
+      100
+     ],
+     [
+      111,
+      125
+     ],
+     [
+      112,
+      150
+     ],
+     [
+      113,
+      170
+     ],
+     [
+      114,
+      190
+     ],
+     [
+      115,
+      210
+     ],
+     [
+      116,
+      230
+     ],
+     [
+      117,
+      240
+     ],
+     [
+      118,
+      260
+     ],
+     [
+      119,
+      280
+     ],
+     [
+      120,
+      310
+     ],
+     [
+      121,
+      330
+     ],
+     [
+      122,
+      360
+     ],
+     [
+      123,
+      400
+     ],
+     [
+      124,
+      450
+     ],
+     [
+      125,
+      540
+     ],
+     [
+      126,
+      650
+     ],
+     [
+      127,
+      740
+     ],
+     [
+      128,
+      818
+     ],
+     [
+      129,
+      898
+     ],
+     [
+      130,
+      983
+     ],
+     [
+      131,
+      1074
+     ],
+     [
+      132,
+      1172
+     ],
+     [
+      133,
+      1276
+     ],
+     [
+      134,
+      1386
+     ],
+     [
+      135,
+      1504
+     ],
+     [
+      136,
+      1629
+     ],
+     [
+      137,
+      1761
+     ],
+     [
+      138,
+      1901
+     ],
+     [
+      139,
+      2049
+     ],
+     [
+      140,
+      2205
+     ],
+     [
+      141,
+      2370
+     ],
+     [
+      142,
+      2544
+     ],
+     [
+      143,
+      2726
+     ],
+     [
+      144,
+      2918
+     ],
+     [
+      145,
+      3119
+     ],
+     [
+      146,
+      3331
+     ],
+     [
+      147,
+      3552
+     ],
+     [
+      148,
+      3784
+     ],
+     [
+      149,
+      4026
+     ],
+     [
+      150,
+      4279
+     ],
+     [
+      151,
+      4543
+     ],
+     [
+      152,
+      4818
+     ],
+     [
+      153,
+      5105
+     ],
+     [
+      154,
+      5404
+     ],
+     [
+      155,
+      5715
+     ],
+     [
+      156,
+      6126
+     ],
+     [
+      157,
+      6637
+     ],
+     [
+      158,
+      7248
+     ],
+     [
+      159,
+      7959
+     ],
+     [
+      160,
+      8770
+     ],
+     [
+      161,
+      9681
+     ],
+     [
+      162,
+      10692
+     ],
+     [
+      163,
+      11803
+     ],
+     [
+      164,
+      13014
+     ],
+     [
+      165,
+      14325
+     ],
+     [
+      166,
+      15736
+     ],
+     [
+      167,
+      17247
+     ],
+     [
+      168,
+      18858
+     ],
+     [
+      169,
+      20569
+     ],
+     [
+      170,
+      22380
+     ],
+     [
+      171,
+      24291
+     ],
+     [
+      172,
+      26302
+     ],
+     [
+      173,
+      28413
+     ],
+     [
+      174,
+      30624
+     ],
+     [
+      175,
+      32935
+     ],
+     [
+      176,
+      35346
+     ],
+     [
+      177,
+      37857
+     ],
+     [
+      178,
+      40468
+     ],
+     [
+      179,
+      43179
+     ],
+     [
+      180,
+      45990
+     ],
+     [
+      181,
+      48901
+     ],
+     [
+      182,
+      51912
+     ],
+     [
+      183,
+      55023
+     ],
+     [
+      184,
+      58134
+     ],
+     [
+      185,
+      61245
+     ],
+     [
+      186,
+      64356
+     ],
+     [
+      187,
+      67467
+     ],
+     [
+      188,
+      70578
+     ],
+     [
+      189,
+      73689
+     ],
+     [
+      190,
+      76800
+     ],
+     [
+      191,
+      79911
+     ]
+    ]
+   },
+   "2027": {
+    "from": "2027-01-01",
+    "seuil": 103,
+    "plafond": 90000,
+    "plafond_des": 190,
+    "grille": [
+     [
+      103,
+      50
+     ],
+     [
+      104,
+      75
+     ],
+     [
+      105,
+      100
+     ],
+     [
+      106,
+      125
+     ],
+     [
+      107,
+      150
+     ],
+     [
+      108,
+      170
+     ],
+     [
+      109,
+      190
+     ],
+     [
+      110,
+      210
+     ],
+     [
+      111,
+      230
+     ],
+     [
+      112,
+      240
+     ],
+     [
+      113,
+      260
+     ],
+     [
+      114,
+      280
+     ],
+     [
+      115,
+      310
+     ],
+     [
+      116,
+      330
+     ],
+     [
+      117,
+      360
+     ],
+     [
+      118,
+      400
+     ],
+     [
+      119,
+      450
+     ],
+     [
+      120,
+      540
+     ],
+     [
+      121,
+      650
+     ],
+     [
+      122,
+      740
+     ],
+     [
+      123,
+      818
+     ],
+     [
+      124,
+      898
+     ],
+     [
+      125,
+      983
+     ],
+     [
+      126,
+      1074
+     ],
+     [
+      127,
+      1172
+     ],
+     [
+      128,
+      1276
+     ],
+     [
+      129,
+      1386
+     ],
+     [
+      130,
+      1504
+     ],
+     [
+      131,
+      1629
+     ],
+     [
+      132,
+      1761
+     ],
+     [
+      133,
+      1901
+     ],
+     [
+      134,
+      2049
+     ],
+     [
+      135,
+      2205
+     ],
+     [
+      136,
+      2370
+     ],
+     [
+      137,
+      2544
+     ],
+     [
+      138,
+      2726
+     ],
+     [
+      139,
+      2918
+     ],
+     [
+      140,
+      3119
+     ],
+     [
+      141,
+      3331
+     ],
+     [
+      142,
+      3552
+     ],
+     [
+      143,
+      3784
+     ],
+     [
+      144,
+      4026
+     ],
+     [
+      145,
+      4279
+     ],
+     [
+      146,
+      4543
+     ],
+     [
+      147,
+      4818
+     ],
+     [
+      148,
+      5105
+     ],
+     [
+      149,
+      5404
+     ],
+     [
+      150,
+      5715
+     ],
+     [
+      151,
+      6126
+     ],
+     [
+      152,
+      6637
+     ],
+     [
+      153,
+      7248
+     ],
+     [
+      154,
+      7959
+     ],
+     [
+      155,
+      8770
+     ],
+     [
+      156,
+      9681
+     ],
+     [
+      157,
+      10692
+     ],
+     [
+      158,
+      11803
+     ],
+     [
+      159,
+      13014
+     ],
+     [
+      160,
+      14325
+     ],
+     [
+      161,
+      15736
+     ],
+     [
+      162,
+      17247
+     ],
+     [
+      163,
+      18858
+     ],
+     [
+      164,
+      20569
+     ],
+     [
+      165,
+      22380
+     ],
+     [
+      166,
+      24291
+     ],
+     [
+      167,
+      26302
+     ],
+     [
+      168,
+      28413
+     ],
+     [
+      169,
+      30624
+     ],
+     [
+      170,
+      32935
+     ],
+     [
+      171,
+      35346
+     ],
+     [
+      172,
+      37857
+     ],
+     [
+      173,
+      40468
+     ],
+     [
+      174,
+      43179
+     ],
+     [
+      175,
+      45990
+     ],
+     [
+      176,
+      48901
+     ],
+     [
+      177,
+      51912
+     ],
+     [
+      178,
+      55023
+     ],
+     [
+      179,
+      58134
+     ],
+     [
+      180,
+      61245
+     ],
+     [
+      181,
+      64356
+     ],
+     [
+      182,
+      67467
+     ],
+     [
+      183,
+      70578
+     ],
+     [
+      184,
+      73689
+     ],
+     [
+      185,
+      76800
+     ],
+     [
+      186,
+      79911
+     ],
+     [
+      187,
+      83022
+     ],
+     [
+      188,
+      86133
+     ],
+     [
+      189,
+      89244
+     ]
+    ]
+   }
+  },
+  "sources": [
+   "l421_62",
+   "f35947"
+  ]
+ },
+ "malus_masse": {
+  "famille": {
+   "kg_par_enfant": 200
+  },
+  "phev": {
+   "autonomie_min_km": 50,
+   "plafond_part_masse": 0.15
+  },
+  "premiere_annee": "2022-01-01",
+  "annees": {
+   "2022": {
+    "from": "2022-01-01",
+    "tranches": [
+     {
+      "min": 1800,
+      "max": null,
+      "euro_kg": 10
+     }
+    ]
+   },
+   "2024": {
+    "from": "2024-01-01",
+    "tranches": [
+     {
+      "min": 1600,
+      "max": 1799,
+      "euro_kg": 10
+     },
+     {
+      "min": 1800,
+      "max": 1899,
+      "euro_kg": 15
+     },
+     {
+      "min": 1900,
+      "max": 1999,
+      "euro_kg": 20
+     },
+     {
+      "min": 2000,
+      "max": 2099,
+      "euro_kg": 25
+     },
+     {
+      "min": 2100,
+      "max": null,
+      "euro_kg": 30
+     }
+    ]
+   },
+   "2026": {
+    "from": "2026-01-01",
+    "tranches": [
+     {
+      "min": 1500,
+      "max": 1699,
+      "euro_kg": 10
+     },
+     {
+      "min": 1700,
+      "max": 1799,
+      "euro_kg": 15
+     },
+     {
+      "min": 1800,
+      "max": 1899,
+      "euro_kg": 20
+     },
+     {
+      "min": 1900,
+      "max": 1999,
+      "euro_kg": 25
+     },
+     {
+      "min": 2000,
+      "max": null,
+      "euro_kg": 30
+     }
+    ]
+   }
+  },
+  "hybrides": [
+   {
+    "from": "2022-01-01",
+    "micro": 0,
+    "hybride": 0,
+    "phev": "exo"
+   },
+   {
+    "from": "2024-01-01",
+    "micro": 100,
+    "hybride": 100,
+    "phev": "exo"
+   },
+   {
+    "from": "2025-01-01",
+    "micro": 100,
+    "hybride": 100,
+    "phev": 200
+   },
+   {
+    "from": "2027-01-01",
+    "micro": 0,
+    "hybride": 100,
+    "phev": 200
+   }
+  ],
+  "electrique_exonere": true,
+  "sources": [
+   "cibs",
+   "l421_79",
+   "f35950",
+   "lfi2026"
+  ]
+ },
+ "camionnette_exemptee_des": "2026-01-01",
+ "decote_import": {
+  "zero_avant": "2015-01-01",
+  "grille": [
+   {
+    "mois_max": 3,
+    "reduction": 0.03
+   },
+   {
+    "mois_max": 6,
+    "reduction": 0.06
+   },
+   {
+    "mois_max": 9,
+    "reduction": 0.09
+   },
+   {
+    "mois_max": 12,
+    "reduction": 0.12
+   },
+   {
+    "mois_max": 18,
+    "reduction": 0.16
+   },
+   {
+    "mois_max": 24,
+    "reduction": 0.2
+   },
+   {
+    "mois_max": 36,
+    "reduction": 0.28
+   },
+   {
+    "mois_max": 48,
+    "reduction": 0.33
+   },
+   {
+    "mois_max": 60,
+    "reduction": 0.38
+   },
+   {
+    "mois_max": 72,
+    "reduction": 0.43
+   },
+   {
+    "mois_max": 84,
+    "reduction": 0.48
+   },
+   {
+    "mois_max": 96,
+    "reduction": 0.53
+   },
+   {
+    "mois_max": 108,
+    "reduction": 0.58
+   },
+   {
+    "mois_max": 120,
+    "reduction": 0.64
+   },
+   {
+    "mois_max": 132,
+    "reduction": 0.7
+   },
+   {
+    "mois_max": 144,
+    "reduction": 0.76
+   },
+   {
+    "mois_max": 156,
+    "reduction": 0.82
+   },
+   {
+    "mois_max": 168,
+    "reduction": 0.88
+   },
+   {
+    "mois_max": 180,
+    "reduction": 0.94
+   },
+   {
+    "mois_max": null,
+    "reduction": 1
+   }
+  ],
+  "sources": [
+   "l421_7_2"
+  ]
+ },
+ "y2": {
+  "camping_car_soumis": false,
+  "bareme": [
+   {
+    "ptac_max": 3500,
+    "montant": 34
+   },
+   {
+    "ptac_max": 6000,
+    "montant": 127
+   },
+   {
+    "ptac_max": 11000,
+    "montant": 189
+   },
+   {
+    "ptac_max": null,
+    "montant": 285
+   }
+  ],
+  "sources": [
+   "a421_26"
+  ]
+ },
+ "puissance_fiscale": {
+  "a": 1.8,
+  "b": 3.87,
+  "c": 1.34,
+  "depuis": "2021-01-01",
+  "ch_par_kw": 1.36,
+  "moto": {
+   "paliers": [
+    [
+     0.125,
+     1
+    ],
+    [
+     0.175,
+     2
+    ],
+    [
+     0.25,
+     3
+    ],
+    [
+     0.35,
+     4
+    ],
+    [
+     0.5,
+     5
+    ]
+   ],
+   "au_dela_base": 5,
+   "au_dela_coef": 8
+  },
+  "sources": [
+   "l421_16",
+   "l421_17"
+  ]
+ },
+ "tva_import": {
+  "mois_max": 6,
+  "km_max": 6000,
+  "taux": 0.2,
+  "sources": [
+   "cgi298",
+   "quitus"
+  ]
+ },
+ "douane": {
+  "droit_voiture": 0.1,
+  "tva": 0.2,
+  "sources": [
+   "douane"
+  ]
+ }
+}

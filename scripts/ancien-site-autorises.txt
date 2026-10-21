@@ -1,0 +1,21 @@
+# Dénominations officielles ou adresses reprises telles quelles par obligation ou par exactitude.
+# Une ligne de commentaire précède chaque entrée et dit pourquoi elle ne peut pas être reformulée.
+
+# Nom officiel du code qui fonde toutes les taxes de la carte grise (Légifrance).
+code des impositions sur les biens et services
+# Intitulé officiel de la loi citée dans les mentions légales (obligation LCEN).
+loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique
+# Nom officiel de l'autorité de contrôle citée dans la page de confidentialité (RGPD).
+Commission nationale de l'informatique et des libertés (CNIL)
+# Adresse postale de l'hébergeur GitHub, obligatoire dans les mentions légales (LCEN art. 6).
+88 Colin P Kelly Jr Street, San Francisco, CA 94107
+# Nom officiel de l'agence qui délivre les certificats d'immatriculation.
+Agence nationale des titres sécurisés
+# Nom légal de la taxe dite « malus au poids » (CIBS L421-71).
+taxe sur la masse en ordre de marche
+# Nom légal de la taxe Y2 (CIBS L421-56).
+taxe sur les véhicules de transport
+# Nom officiel de la fédération qui délivre l'attestation des véhicules de collection.
+Fédération française des véhicules d'époque
+# Référence d'article citée telle quelle (délai d'un mois après une cession).
+article R322-5 du code de la route

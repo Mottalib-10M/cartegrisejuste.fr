@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'fr';
+const code = `<iframe src="${SITE_URL}/embed/cout-carte-grise/" title="Coût de la carte grise 2026" width="100%" height="980" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+---
+<PageLayout title="Intégrer le calcul du coût de la carte grise 2026 sur un site" description="Intégrez gratuitement le calcul du coût de la carte grise 2026 en iframe : un code à copier, sans inscription ni cookie, barèmes des 18 régions mis à jour sans rien faire." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'Widget', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Widget' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Intégrer le calculateur</h1>
+    <p class="mt-3 text-lg text-navy-700">Un code à copier, sans inscription ni frais. Garages, auto-écoles, associations d’automobilistes et rédactions l’installent en une minute.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code}</code></pre>
+    <p>Conditions : le lien affiché sous le calculateur reste visible, le calculateur n’est pas modifié, il est fourni sans garantie. Les tarifs des régions et les barèmes de malus sont mis à jour sur ce site : votre page en profite sans intervention. Version anglaise : <code>{`${SITE_URL}/embed/cout-carte-grise/?lang=en`}</code>.</p>
+    <p>Les saisies de vos visiteurs restent dans leur navigateur et le cadre intégré ne pose aucun cookie sur votre site. Pour toute demande, passez par la <a href={route('contact', lang)}>page contact</a>.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src="/embed/cout-carte-grise/" title="Coût de la carte grise 2026" width="100%" height="980" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

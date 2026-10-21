@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy – ${SITE_NAMES[lang]}`} description="Where the French registration rates published here come from, who answers for them, how often they are reread and what happens when a regional rate or a malus is reported wrong." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy and corrections</h1>
+    <p>A regional rate a few euros out of date per horsepower, and the amount shown no longer matches what the ANTS will charge. A malus scale one year behind, and the gap runs into thousands of euros. This is how we keep those figures and what we do when one of them is wrong.</p>
+    <h2>Responsibility</h2><p>{AUTHOR_NAME} answers for every rate, every scale and every rule in the calculator. Report a difference to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; it is checked against the official text before anything is changed.</p>
+    <h2>Primary sources</h2>
+    <ul>
+      <li><strong>Légifrance</strong>: the tax code on goods and services (vehicle registration taxes) and the finance acts;</li>
+      <li><strong>service-public.gouv.fr</strong>: the official guidance on certificate costs and on the maluses;</li>
+      <li><strong>regional councils</strong>: the resolutions setting the fiscal horsepower rate and any exemptions;</li>
+      <li><strong>the ANTS</strong>: the rules of the application and the documents required.</li>
+    </ul>
+    <p>A figure seen only on an intermediary’s site or in the press never enters the calculator. Every regional rate is read from the State’s official simulator; a start date we could not read in a regional text is marked “not verified” in the regions table. It is never shown as verified.</p>
+    <h2>Estimates, not bills</h2><p>Every amount is worked out from your inputs and the scales in force on the chosen date. The amount the ANTS calculates when you apply is the one that counts; we publish a calculation so that it can be checked, not replaced.</p>
+    <h2>Checks before publication</h2><p>Every rebuild replays cases worked out by hand from the texts and official examples: regional tax by region, half rate after ten years, maluses at the edges of the scales, the shared cap on both maluses, the reduction for an imported used car. A case that drifts blocks publication.</p>
+    <h2>Schedule</h2><p>Regional rates: reread whenever a region votes and at least every quarter. National scales: at each finance act. The date at the bottom of each page comes from the parameter file.</p>
+    <h2>Handling errors</h2>
+    <ol><li>Check against the official text.</li><li>Fix the parameter file or the engine, add a test.</li><li>New date on the pages concerned.</li></ol>
+    <h2>Independence</h2><p>No commercial link with a registration intermediary, a car dealer or an insurer. Should such a relationship ever exist, it would be stated where it applies.</p>
+    <p>See also the <a href={route('method', lang)}>calculation method and sources</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

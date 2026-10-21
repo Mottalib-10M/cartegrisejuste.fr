@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { YEAR, LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { P } from '../../lib/engine/params';
+const lang = 'fr';
+const verifiees = P.regions.filter((r) => r.deliberation).length;
+---
+<PageLayout title="Carte Grise Calcul : qui édite ce calculateur et pourquoi" description="Qui édite Carte Grise Calcul, pourquoi un calcul de carte grise qui ne vend aucune démarche, d’où viennent les barèmes 2026 et comment nous signaler un écart." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path: route('about', lang) }])]} breadcrumbs={[{ label: 'À propos' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">À propos de Carte Grise Calcul</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>Carte Grise Calcul est une calculatrice publiée par Radif Partners. Elle répond à une seule question, celle qu’on se pose juste avant d’acheter un véhicule ou de déménager : combien vais-je payer pour mon certificat d’immatriculation, et pourquoi ce montant ?</p>
+    <h2>Un calcul, pas un service de démarche</h2>
+    <p>Le site ne dépose aucune demande, ne collecte aucun justificatif et ne facture rien. La demande de certificat se fait gratuitement sur le site officiel de l’ANTS ; vous n’y réglez que les taxes. Nous l’écrivons sur chaque page parce que beaucoup de sites qui affichent un prix de carte grise vivent en réalité de frais de service ajoutés à ce prix, sans toujours le dire clairement.</p>
+    <h2>Pourquoi un calcul case par case</h2>
+    <p>Le montant d’un titre est la somme de cinq cases imprimées en bas du document, Y1 à Y5, auxquelles s’ajoutent pour une voiture neuve ou importée deux malus. Un total seul ne permet pas de vérifier quoi que ce soit. En détaillant chaque ligne, nous permettons de comparer avec le montant affiché au moment du paiement et de comprendre d’où vient un écart : une région qui a changé son tarif, un véhicule qui vient de passer dix ans, une exonération qui a disparu.</p>
+    <h2>D’où viennent les chiffres</h2>
+    <p>Les règles viennent du code des impositions sur les biens et services publié sur Légifrance et des fiches de service-public.gouv.fr. Le tarif du cheval fiscal de chacune des dix-huit régions est celui que publie le simulateur officiel de l’État ; pour {verifiees} d’entre elles, nous avons aussi lu le document régional qui l’a fixé, et la page de <a href={route('method', lang)}>méthode</a> dit franchement pour lesquelles ce texte n’a pas été trouvé, et quelles dates d’effet restent non vérifiées. Toutes les valeurs vivent dans un seul fichier de paramètres que lisent le calculateur et les textes : un chiffre corrigé l’est partout à la fois.</p>
+    <h2>Financement et données</h2>
+    <p>Le site est gratuit et sans inscription. Ce que vous tapez reste dans votre navigateur : aucune plaque, aucun numéro de formule, aucune adresse ne nous est envoyé. Une audience anonyme est mesurée pour savoir quelles pages servent ; s’il y a un jour de la publicité, elle ne sera jamais placée au-dessus d’un calcul ni présentée comme un conseil.</p>
+    <h2>Une version anglaise</h2>
+    <p>Chaque page existe en anglais pour les étrangers qui immatriculent un véhicule en France, souvent importé, et découvrent un vocabulaire administratif opaque : certificat de conformité, quitus fiscal, cheval fiscal. Les termes français y sont expliqués et les montants restent en euros.</p>
+    <h2>Nous écrire</h2>
+    <p>Un tarif régional qui a changé, une délibération que nous n’avons pas trouvée, un cas que le calculateur ignore : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Voir aussi la <a href={route('editorial', lang)}>charte éditoriale</a> et les <a href={route('terms', lang)}>mentions légales</a>.</p>
+    <p class="text-sm text-navy-600">Barèmes {YEAR} relus le <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'fr-FR')}</time>.</p>
+  </div>
+</PageLayout>

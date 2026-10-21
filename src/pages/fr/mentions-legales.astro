@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title={`Mentions légales – ${SITE_NAMES[lang]}`} description="Éditeur, directeur de la publication, hébergeur, objet du site, absence de service de démarche, réutilisation des textes officiels, responsabilité et droit applicable." lang={lang} noindex={true} breadcrumbs={[{ label: 'Mentions légales' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Mentions légales</h1>
+    <p>Informations publiées en application de l’article 6 III-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.</p>
+    <h2>Éditeur du site</h2>
+    <LegalIdentity lang={lang} />
+    <p>Directeur de la publication : {AUTHOR_NAME}, responsable des contenus publiés sur {SITE_URL}.</p>
+    <h2>Hébergeur</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>Objet du site</h2>
+    <p>Le site calcule gratuitement une estimation du coût d’un certificat d’immatriculation à partir des saisies du visiteur et explique les règles qui le composent. Il n’est pas habilité à effectuer des démarches d’immatriculation, n’en propose pas et n’agit pour le compte de personne : la demande se fait sur le site de l’Agence nationale des titres sécurisés, gratuitement, seules les taxes étant dues. Le site est indépendant de l’ANTS, du ministère de l’Intérieur et des conseils régionaux, et ne reprend aucun de leurs logos. Méthode et limites : <a href={route('method', lang)}>méthode de calcul</a>.</p>
+    <h2>Textes officiels réutilisés</h2>
+    <p>Les règles et barèmes proviennent de textes publiés sur Légifrance, de fiches de service-public.gouv.fr et de délibérations des conseils régionaux, cités page par page. Les informations publiques sont réutilisées sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" rel="nofollow noopener" target="_blank">Licence ouverte Etalab</a> lorsqu’elle s’applique, avec mention de la source et de la date.</p>
+    <h2>Limites de responsabilité</h2>
+    <p>Les barèmes sont relus et testés, sans garantie d’absence d’erreur ni de mise à jour instantanée après un vote régional. L’éditeur ne peut être tenu responsable d’une décision prise sur la seule base d’une estimation affichée ici ; le montant calculé par l’ANTS lors de la demande fait foi. Une erreur se signale par la page <a href={route('contact', lang)}>contact</a>.</p>
+    <h2>Propriété intellectuelle</h2>
+    <p>Textes, graphismes et code sont protégés et restent la propriété de l’éditeur ; courtes citations autorisées avec un lien vers la page d’origine.</p>
+    <h2>Intégration du calculateur</h2><p>Le calculateur peut être intégré gratuitement en iframe, lien visible conservé : voir la <a href={route('widget', lang)}>page widget</a>.</p>
+    {/* gen-legal-pages:terms */}
+    <h2>Données personnelles et cookies</h2>
+    {GA4_ID ? (<p>Les saisies des calculateurs ne quittent pas votre navigateur. Le site dépose des cookies de mesure d’audience Google Analytics (<code>_ga</code>, <code>_ga_{GA4_ID.replace('G-', '')}</code>, 13 mois au plus), sans publicité{CLARITY_ID && ' ; la stabilité des pages est mesurée avec Microsoft Clarity, sans cookie'}. Détails, base juridique et moyens de vous y opposer : <a href={route('privacy', lang)}>politique de confidentialité</a> et page <a href={route('cookies', lang)}>cookies</a>.</p>) : (<p>Les saisies des calculateurs ne quittent pas votre navigateur et le site ne dépose aucun cookie{CLARITY_ID && ' ; la stabilité des pages est mesurée de façon anonyme avec Microsoft Clarity, sans cookie'}. Voir la <a href={route('privacy', lang)}>politique de confidentialité</a> et la page <a href={route('cookies', lang)}>cookies</a>.</p>)}
+    {/* /gen-legal-pages:terms */}
+    <h2>Signalement</h2><p>Contenu illicite : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, avec l’adresse de la page et le motif.</p>
+    <h2>Droit applicable</h2><p>Droit français. À défaut d’accord amiable, les juridictions compétentes de {LEGAL.jurisdiction}. Mise à jour : {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,86 @@
+---
+/**
+ * Rendu d'une page définie dans `src/content/` (RECETTE §5, §9.3, §21). Ordre : H1 et chapeau d'une
+ * phrase, puis le simulateur (outil complet ou mini-simulateur du sujet, `data-outil` quand c'est le
+ * contenu principal de la page), puis le bloc citable replié, puis le corps. Guide (pas d'outil) :
+ * bloc citable, mini-simulateur, corps. FAQ, pages associées, sources et encart auteur viennent du
+ * PageLayout, la FAQ affichée et balisée depuis la même liste (§7).
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import MiniSim from './calc/MiniSim';
+import Clamp from './Clamp.astro';
+import CoutCalc from './cg/CoutCalc';
+import TarifsTool from './cg/TarifsTool';
+import Co2Tool from './cg/Co2Tool';
+import MasseTool from './cg/MasseTool';
+import CvTool from './cg/CvTool';
+import CompareTool from './cg/CompareTool';
+import FraisTool from './cg/FraisTool';
+import { route, ROUTES, type Locale } from '../i18n/routes';
+import { label } from '../i18n/nav';
+import { t } from '../i18n/ui';
+import { pageById } from '../lib/guides';
+import { helpers } from '../lib/helpers';
+import { P } from '../lib/engine/params';
+import { articleSchema, faqSchema, breadcrumbSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+import { AUTHOR_NAME } from '../data/site-config';
+import type { PageDef } from '../lib/guide-types';
+interface Props { page: PageDef; lang: Locale }
+const { page, lang } = Astro.props;
+const x = page[lang];
+const ui = t(lang);
+const path = route(page.id, lang);
+const H = helpers(lang);
+const parts = x.body(H).split(/<!--mini:([A-Za-z0-9_]+)-->/);
+const resume = x.resume(H);
+const faqs = x.faqs(H);
+const jsonLd = [articleSchema({ title: x.h1, description: x.description, path, lang }), webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: ui.breadcrumbHome, path: route('home', lang) }, { name: x.nav, path }])];
+if (page.tool || (page.mini && page.group !== 'guides')) jsonLd.push(webApplicationSchema({ name: x.h1, description: x.description, path, lang }));
+if (faqs.length) jsonLd.push(faqSchema(faqs, lang));
+const related = page.related.filter((id) => ROUTES.some((r) => r.id === id)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: pageById(id)?.[lang].card ?? '' }));
+const sources = page.sources.map((k) => ({ name: P.sources[k].label[lang], url: P.sources[k].url }));
+const methodHref = route('method', lang);
+const cible = page.miniHref ?? 'home';
+const miniHref = ROUTES.some((r) => r.id === cible) ? route(cible, lang) : undefined;
+/** Le mini-simulateur d'une page « situation » est son outil principal : il porte `data-outil`. */
+const miniOutil = !page.tool && page.mini && page.group !== 'guides';
+const byline = { about: route('about', lang), editorial: route('editorial', lang) };
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={faqs} related={related} sources={sources} breadcrumbs={[{ label: x.nav }]}>
+  <article>
+    <header class="mb-4">
+      <h1 class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
+      <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
+    </header>
+    {page.tool ? (
+      <>
+        <div data-outil class="mb-4">
+          {page.tool === 'cout' && <CoutCalc client:load lang={lang} methodHref={methodHref} region={page.region} id={`calc-${page.id}`} />}
+          {page.tool === 'tarifs' && <TarifsTool client:load lang={lang} methodHref={methodHref} />}
+          {page.tool === 'co2' && <Co2Tool client:load lang={lang} methodHref={methodHref} />}
+          {page.tool === 'masse' && <MasseTool client:load lang={lang} methodHref={methodHref} />}
+          {page.tool === 'cv' && <CvTool client:load lang={lang} methodHref={methodHref} />}
+          {page.tool === 'comparer' && <CompareTool client:load lang={lang} methodHref={methodHref} />}
+          {page.tool === 'frais' && <FraisTool client:load lang={lang} methodHref={methodHref} />}
+        </div>
+        <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
+        <p class="mb-10 text-sm text-navy-600">{ui.reviewedBy} <a href={byline.about} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={byline.editorial} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={methodHref} class="underline hover:text-navy-900">{label('method', lang)}</a></p>
+      </>
+    ) : miniOutil ? (
+      <>
+        <div data-outil><MiniSim client:load spacing="mb-4 mt-3" kind={page.mini!} lang={lang} href={miniHref} /></div>
+        <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
+        <p class="mb-10 text-sm text-navy-600">{ui.reviewedBy} <a href={byline.about} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={byline.editorial} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={methodHref} class="underline hover:text-navy-900">{label('method', lang)}</a></p>
+      </>
+    ) : (
+      <>
+        <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
+        {page.mini && <MiniSim client:load spacing="mb-4 mt-3" kind={page.mini} lang={lang} href={miniHref} />}
+        <p class="mb-8 text-sm text-navy-600">{ui.reviewedBy} <a href={byline.about} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={byline.editorial} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={methodHref} class="underline hover:text-navy-900">{label('method', lang)}</a></p>
+      </>
+    )}
+    <div class="prose prose-slate max-w-none">
+      {parts.map((p, i) => i % 2 === 0 ? <Fragment set:html={p} /> : <MiniSim client:load kind={p} lang={lang} href={miniHref} />)}
+    </div>
+  </article>
+</PageLayout>

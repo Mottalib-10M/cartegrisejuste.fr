@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title={`Charte éditoriale – ${SITE_NAMES[lang]}`} description="D’où viennent les barèmes de la carte grise publiés ici, qui en répond, à quel rythme ils sont relus et ce qui se passe quand un tarif régional ou un malus est signalé faux." lang={lang} noindex={true} breadcrumbs={[{ label: 'Charte éditoriale' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Charte éditoriale et politique de correction</h1>
+    <p>Un tarif régional périmé de quelques euros par cheval, et le montant affiché ne correspond plus à celui que l’ANTS demandera. Un barème de malus en retard d’un an, et l’écart se compte en milliers d’euros. Voici comment nous tenons ces chiffres et ce que nous faisons quand l’un d’eux est faux.</p>
+    <h2>Responsabilité</h2><p>{AUTHOR_NAME} répond de chaque tarif, de chaque barème et de chaque règle du calculateur. Un écart se signale à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ; il est vérifié sur le texte officiel avant toute correction.</p>
+    <h2>Sources primaires</h2>
+    <ul>
+      <li><strong>Légifrance</strong> : code des impositions sur les biens et services (taxes sur l’immatriculation des véhicules) et lois de finances ;</li>
+      <li><strong>service-public.gouv.fr</strong> : fiches pratiques sur le coût du certificat et sur les malus ;</li>
+      <li><strong>les conseils régionaux</strong> : délibérations qui fixent le tarif du cheval fiscal et les exonérations ;</li>
+      <li><strong>l’ANTS</strong> : règles de la démarche et justificatifs.</li>
+    </ul>
+    <p>Un chiffre vu seulement chez un intermédiaire ou dans la presse n’entre pas dans le calculateur. Chaque tarif régional est relevé dans le simulateur officiel de l’État ; une date d’effet que nous n’avons pas pu lire dans un texte régional est marquée « non vérifiée » dans le tableau des régions. Elle n’est jamais présentée comme vérifiée.</p>
+    <h2>Estimations, pas des factures</h2><p>Chaque montant est calculé à partir de vos saisies et des barèmes en vigueur à la date choisie. Le montant que l’ANTS calcule au moment de la demande fait foi ; nous publions un calcul pour qu’on puisse le vérifier, pas pour le remplacer.</p>
+    <h2>Contrôles avant publication</h2><p>Chaque reconstruction rejoue des cas calculés à la main à partir des textes et des exemples officiels : taxe régionale par région, demi-tarif après dix ans, malus aux bornes des barèmes, plafond commun des deux malus, décote d’un véhicule importé. Un cas qui dévie bloque la publication.</p>
+    <h2>Calendrier</h2><p>Tarifs régionaux : relus à chaque vote d’une région et au moins chaque trimestre. Barèmes nationaux : à chaque loi de finances. La date affichée en bas de page vient du fichier de paramètres.</p>
+    <h2>Traitement des erreurs</h2>
+    <ol><li>Vérification sur le texte officiel.</li><li>Correction du fichier de paramètres ou du moteur, ajout d’un test.</li><li>Nouvelle date sur les pages concernées.</li></ol>
+    <h2>Indépendance</h2><p>Aucun lien commercial avec un intermédiaire de démarche, un concessionnaire ou un assureur. Si une relation de ce type existait un jour, elle serait indiquée à l’endroit même où elle joue.</p>
+    <p>Voir aussi la <a href={route('method', lang)}>méthode de calcul et les sources</a>. Version : {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

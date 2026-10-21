@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Contact – ${SITE_NAMES[lang]}`} description="Write to the publisher of Carte Grise Calcul: report an outdated regional rate, a gap with the amount the ANTS charged, ask about the method or embed the calculator on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>One address, read every week: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. No phone line and no sales call-back: the site sells neither paperwork nor referrals.</p>
+    <h2>Report a difference</h2>
+    <p>Most useful: the amount the ANTS asked you to pay, box by box if you have it, and the calculator’s share link, which carries your inputs and nothing else. For a regional rate, attach the region’s resolution or press release that sets it. A confirmed difference is fixed in the parameter file and turned into a test, as the <a href={route('editorial', lang)}>editorial policy</a> describes.</p>
+    <h2>What we do not do</h2>
+    <p>We have no access to the registration system, to your file or to the status of an application. For a stuck application, use the ANTS help service or a digital help point in a prefecture; to have someone apply for you, an approved motor trade business can do it for a fee added to the taxes.</p>
+    <h2>Embed the calculator</h2>
+    <p>Drivers’ associations, garages, driving schools, newsrooms: the calculator can be embedded free of charge in an iframe. The code is on the <a href={route('widget', lang)}>Embed the calculator</a> page.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>{AUTHOR_NAME} is responsible for the content of Carte Grise Calcul; full details are in the <a href={route('terms', lang)}>legal notice</a>. Page reviewed on {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

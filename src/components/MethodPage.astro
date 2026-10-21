@@ -1,0 +1,98 @@
+---
+/**
+ * Méthode et sources (RECETTE §8) : chaque ligne du calcul, l'article qui la fonde, et l'état de la
+ * vérification des tarifs régionaux, région par région. Tout est lu dans data/params-2026.json.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import { route, type Locale } from '../i18n/routes';
+import { P } from '../lib/engine/params';
+import { tarifRegion, majorationIdfm } from '../lib/engine/carte-grise';
+import { helpers } from '../lib/helpers';
+import { LAST_UPDATED } from '../data/site-config';
+import { breadcrumbSchema, webPageSchema } from '../lib/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const fr = lang === 'fr';
+const h = helpers(lang);
+const L = (a: string, b: string) => (fr ? a : b);
+const d = P.regional.date_releve;
+const path = route('method', lang);
+const title = L('Méthode et sources du calcul de la carte grise 2026', 'Method and sources of the 2026 registration calculation');
+const description = L('Comment chaque ligne du titre est calculée, quel article la fonde, d’où vient chaque tarif régional et ce qui n’a pas pu être vérifié à la source primaire.', 'How each line of the certificate is worked out, which article it rests on, where each regional rate comes from and what could not be checked at the source.');
+const src = (k: keyof typeof P.sources) => P.sources[k];
+const regions = P.regions.map((r) => {
+  const t = tarifRegion(r.id, d);
+  const idfm = r.idfm ? majorationIdfm(d) : 0;
+  const delib = r.deliberation ? src(r.deliberation as keyof typeof P.sources) : null;
+  return { r, t, idfm, delib };
+});
+const nbDelib = regions.filter((x) => x.delib).length;
+const nbDates = regions.filter((x) => x.t.dateVerifiee).length;
+const co2 = Object.entries(P.malus_co2.annees).sort(([a], [b]) => a.localeCompare(b));
+const masse = Object.entries(P.malus_masse.annees).sort(([a], [b]) => a.localeCompare(b));
+const dec = P.decote_import.grille;
+const jsonLd = [webPageSchema({ name: title, description, path, lang }), breadcrumbSchema([{ name: L('Accueil', 'Home'), path: route('home', lang) }, { name: L('Méthode et sources', 'Method and sources'), path }])];
+const ext = { target: '_blank', rel: 'nofollow noopener noreferrer' };
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={jsonLd} breadcrumbs={[{ label: L('Méthode et sources', 'Method and sources') }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{L('Méthode et sources', 'Method and sources')}</h1>
+    <p class="mt-2 text-navy-700">{L(`Barèmes relevés le ${h.date(d)} sur Légifrance et service-public.gouv.fr. Un seul fichier de paramètres alimente le calculateur, les mini-simulateurs et les textes.`, `Scales read on ${h.date(d)} on Légifrance and service-public.gouv.fr. A single parameter file feeds the calculator, the mini calculators and the texts.`)}</p></header>
+  <div class="prose prose-slate max-w-none">
+    <h2>{L('Le calcul, ligne par ligne', 'The calculation, line by line')}</h2>
+    <ul>
+      <li><strong>Y1</strong> {L('taxe régionale', 'regional tax')} : {L('tarif de la région du domicile × puissance administrative (case P.6), dans la limite de', 'rate of the region of residence × administrative horsepower (box P.6), capped at')} {h.eur2(P.regional.plafond_cv)} {L('par cheval', 'per CV')} (<a href={src('cibs').url} {...ext}>CIBS L421-42</a>). {L('Moitié quand la première immatriculation date de', 'Halved when the first registration is')} {P.regional.age_reduction_ans} {L('ans ou plus (L421-45) ; moitié pour les motos L3e et L4e quel que soit leur âge, zéro pour les cyclomoteurs (L421-46) ; moitié pour les camions et autobus (L421-47). Due seulement lors d’un changement de propriétaire ou d’une première immatriculation en France (L421-33, L421-34), y compris après un héritage ou une donation ; exonérée entre conjoints et partenaires (L421-52).', 'years old or more (L421-45); halved for L3e and L4e motorbikes whatever their age, nil for mopeds (L421-46); halved for lorries and buses (L421-47). Due only on a change of owner or a first registration in France (L421-33, L421-34), including after an inheritance or a gift; exempt between spouses and partners (L421-52).')}</li>
+      <li><strong>{L('Majoration IDFM', 'IDFM surcharge')}</strong> : {L('en Île-de-France', 'in Île-de-France')}, {P.idfm.periodes.map((p, i) => <>{i > 0 && ', '}{h.eur2(p.cv)} {L('par cheval', 'per CV')} {L('à partir du', 'from')} {h.date(p.from)}{p.to ? <> {L('jusqu’au', 'to')} {h.date(p.to)}</> : ''}</>)} (<a href={src('idfm').url} {...ext}>CIBS L421-54-1</a>, <a href={src('lfi2026').url} {...ext}>{L('loi de finances pour 2026, art. 60', 'Finance Act 2026, art. 60')}</a>). {L(`Hors plafond, mêmes réductions que la taxe régionale. Le montant de 2027 vaut sauf délibération d’Île-de-France Mobilités, dans la limite de ${h.eur2(P.idfm.plafond_legal)}.`, `Outside the cap, same reductions as the regional tax. The 2027 amount applies unless Île-de-France Mobilités decides otherwise, up to ${h.eur2(P.idfm.plafond_legal)}.`)}</li>
+      <li><strong>Y2</strong> {L('taxe sur les véhicules de transport', 'transport vehicle tax')} : {P.y2.bareme.map((b, i) => <>{i > 0 && ' · '}{b.ptac_max ? `≤ ${h.num(b.ptac_max)} kg` : L('au-delà', 'above')} : {h.eur(b.montant)}</>)} {L('selon le PTAC des camionnettes et camions', 'by gross weight of vans and lorries')} (<a href={src('a421_26').url} {...ext}>CIBS A421-26</a>). {L('Pas due pour les camping-cars ni les véhicules de collection.', 'Not due for motorhomes or classic vehicles.')}</li>
+      <li><strong>Y3</strong> {L('malus CO₂ et malus au poids', 'CO₂ malus and weight malus')} : {L('à la première immatriculation en France d’une voiture particulière, neuve ou importée. Barème de l’année de la première immatriculation (L421-59). Camionnettes exemptées depuis le', 'on the first registration in France of a passenger car, new or imported. Scale of the year of first registration (L421-59). Vans exempt since')} {h.date(P.camionnette_exemptee_des)} (L421-30-1). {L('Détail ci-dessous.', 'Details below.')}</li>
+      <li><strong>Y4</strong> {L('taxe fixe', 'fixed tax')} : {h.eur2(P.national.taxe_fixe)} (L421-38), {L('sauf changement d’adresse et réédition après intempéries (L421-39, L421-40).', 'except for a change of address and a reissue after a natural disaster (L421-39, L421-40).')}</li>
+      <li><strong>Y5</strong> {L('redevance d’acheminement', 'delivery fee')} : {h.eur2(P.national.redevance)} (<a href={src('f19211').url} {...ext}>{L('fiche F19211', 'page F19211')}</a>). {L(`Du 1er au ${P.national.adresse_gratuits}e changement d’adresse, aucun titre n’est édité : une étiquette, 0 €.`, `For the 1st to ${P.national.adresse_gratuits}rd change of address no certificate is printed: a sticker, €0.`)}</li>
+      <li><strong>{L('Arrondi', 'Rounding')}</strong> : {L('Y1 + Y2 + Y3 + Y4 arrondis à l’euro, puis Y5 ajoutée, comme le fait le simulateur de l’État.', 'Y1 + Y2 + Y3 + Y4 rounded to the euro, then Y5 added, as the State’s simulator does.')}</li>
+    </ul>
+
+    <h2>{L('Tarifs régionaux : ce qui est vérifié', 'Regional rates: what is verified')}</h2>
+    <p>{L(`Les ${P.regions.length} tarifs en vigueur au ${h.date(d)} ont été relevés dans le `, `All ${P.regions.length} rates in force on ${h.date(d)} were read from the `)}<a href={src('prixcv').url} {...ext}>{L('simulateur officiel du prix du cheval fiscal', 'official fiscal horsepower price simulator')}</a>{L(', source primaire de l’État, et recoupés avec l’', ', a primary State source, and cross-checked with the ')}<a href={src('a18021').url} {...ext}>{L('actualité du 26 février 2026', 'news item of 26 February 2026')}</a>. {L(`Le document régional qui fixe le tarif n’a été lu que pour ${nbDelib} régions ; pour les autres, il n’a pas été trouvé et la colonne le dit. ${nbDates} dates d’effet sont vérifiées à une source primaire ; les autres sont indiquées comme non vérifiées ou inconnues.`, `The regional document setting the rate was read for ${nbDelib} regions only; for the others it was not found, and the column says so. ${nbDates} start dates are verified at a primary source; the others are shown as not verified or unknown.`)}</p>
+    <div class="not-prose my-6 overflow-x-auto"><table class="journal w-full text-sm">
+      <thead><tr><th scope="col" class="px-3 py-2 text-left">{L('Région', 'Region')}</th><th scope="col" class="px-3 py-2 text-right">{L('€ par CV', '€ per CV')}</th><th scope="col" class="px-3 py-2 text-left">{L('Date d’effet', 'Start date')}</th><th scope="col" class="px-3 py-2 text-left">{L('Texte régional', 'Regional text')}</th><th scope="col" class="px-3 py-2 text-left">{L('Électriques', 'Electric')}</th></tr></thead>
+      <tbody>{regions.map(({ r, t, idfm, delib }) => (
+        <tr class="border-b border-navy-100">
+          <th scope="row" class="px-3 py-2 text-left font-normal text-navy-900">{r.nom[lang]}</th>
+          <td class="tabular-nums px-3 py-2 text-right">{h.eur2(t.cv)}{idfm > 0 && <span class="block text-xs text-navy-600">+ {h.eur2(idfm)} IDFM</span>}</td>
+          <td class="px-3 py-2">{t.from ? h.date(t.from) : L('inconnue', 'unknown')}<span class={`block text-xs ${t.dateVerifiee ? 'text-navy-600' : 'text-amber-800'}`}>{t.dateVerifiee ? L('vérifiée', 'verified') : L('non vérifiée', 'not verified')}</span></td>
+          <td class="px-3 py-2">{delib ? <a href={delib.url} {...ext} class="underline">{L('lu', 'read')}</a> : <span class="text-amber-800">{L('non trouvé', 'not found')}</span>}</td>
+          <td class="px-3 py-2">{r.propres.some((p) => !p.to) ? L('moitié du tarif', 'half rate') : L('plein tarif', 'full rate')}</td>
+        </tr>))}</tbody>
+    </table></div>
+    <p>{L('Les valeurs des années 2023 à 2025 qui ne figurent pas dans ce tableau n’ont été vues que dans la presse ou chez des tiers : elles ne servent à aucun calcul. Aucune hausse régionale pour 2027 n’était connue au jour du relevé. Pour les Hauts-de-France, l’annexe de la délibération de 2025 proposait de supprimer l’exonération des électriques au 1er mars 2025, alors que le simulateur de l’État l’applique à 100 % jusqu’au 31 mars 2026 : le site suit l’État.', 'Values for 2023 to 2025 that are not in this table were only seen in the press or on third-party sites: they are used in no calculation. No regional increase for 2027 was known on the day the rates were read. For Hauts-de-France, the annex to the 2025 resolution proposed ending the electric exemption on 1 March 2025, while the State’s simulator applies it at 100% until 31 March 2026: the site follows the State.')}</p>
+
+    <h2>{L('Malus CO₂', 'CO₂ malus')}</h2>
+    <p>{L('Barèmes WLTP de l’article ', 'WLTP scales of article ')}<a href={src('l421_62').url} {...ext}>L421-62</a>{L(', un montant par gramme, choisi selon la date de première immatriculation :', ', one amount per gram, chosen by the date of first registration:')}</p>
+    <div class="not-prose my-6 overflow-x-auto"><table class="journal w-full text-sm">
+      <thead><tr><th scope="col" class="px-3 py-2 text-left">{L('Première immatriculation depuis le', 'First registered from')}</th><th scope="col" class="px-3 py-2 text-right">{L('Taxé dès', 'Taxed from')}</th><th scope="col" class="px-3 py-2 text-right">{L('Plafond', 'Cap')}</th></tr></thead>
+      <tbody>{co2.map(([, b]) => <tr class="border-b border-navy-100"><td class="px-3 py-2">{h.date(b.from)}</td><td class="tabular-nums px-3 py-2 text-right">{b.seuil} g/km</td><td class="tabular-nums px-3 py-2 text-right">{h.eur(b.plafond)} {L('dès', 'from')} {b.plafond_des} g</td></tr>)}</tbody>
+    </table></div>
+    <p>{L(`Abattements : ${P.malus_co2.famille.g_par_enfant} g/km par enfant à partir de ${P.malus_co2.famille.enfants_min} enfants (L421-70, par remboursement) ; ${h.pct(P.malus_co2.e85.abattement, 0)} des émissions pour le superéthanol E85 jusqu’à ${P.malus_co2.e85.taux_max_gkm} g/km (L421-68). Exonérations : électrique et hydrogène (L421-67), carte mobilité inclusion invalidité et véhicule accessible en fauteuil roulant (L421-65, L421-69). La ligne 167 g/km de la colonne 2024 est reprise telle que Légifrance la publie (6 537 €).`, `Allowances: ${P.malus_co2.famille.g_par_enfant} g/km per child from ${P.malus_co2.famille.enfants_min} children (L421-70, refunded afterwards); ${h.pct(P.malus_co2.e85.abattement, 0)} of emissions for E85 up to ${P.malus_co2.e85.taux_max_gkm} g/km (L421-68). Exemptions: electric and hydrogen (L421-67), disability mobility card and wheelchair-accessible vehicles (L421-65, L421-69). The 167 g/km line of the 2024 column is used as Légifrance publishes it (€6,537).`)}</p>
+
+    <h2>{L('Malus au poids', 'Weight malus')}</h2>
+    <p>{L('Tarif marginal par kilogramme de masse en ordre de marche (case G), article L421-75 :', 'Marginal rate per kilogram of mass in running order (box G), article L421-75:')}</p>
+    <ul>{masse.map(([, b]) => <li>{L('Première immatriculation depuis le', 'First registered from')} {h.date(b.from)} : {b.tranches.map((t, i) => <>{i > 0 && ' · '}{t.max === null ? L(`dès ${h.num(t.min)} kg`, `from ${h.num(t.min)} kg`) : `${h.num(t.min)}-${h.num(t.max)} kg`} {h.eur(t.euro_kg)}/kg</>)}</li>)}</ul>
+    <p>{L(`Électriques et hydrogène exonérés (`, `Electric and hydrogen exempt (`)}<a href={src('l421_79').url} {...ext}>L421-79</a>{L(`, réécrit par la loi de finances pour 2026). Abattements (L421-79-1) : hybride non rechargeable 100 kg ; micro-hybride 100 kg jusqu’en 2026 puis 0 ; hybride rechargeable de plus de ${P.malus_masse.phev.autonomie_min_km} km d’autonomie exonéré jusqu’en 2024, puis 200 kg dans la limite de ${h.pct(P.malus_masse.phev.plafond_part_masse, 0)} de la masse ; ${P.malus_masse.famille.kg_par_enfant} kg par enfant pour une famille nombreuse (L421-81). Le cumul des deux malus ne dépasse pas le plafond du barème CO₂ de l’année (L421-74).`, `, rewritten by the 2026 Finance Act). Allowances (L421-79-1): self-charging hybrid 100 kg; mild hybrid 100 kg until 2026, then 0; plug-in hybrid with more than ${P.malus_masse.phev.autonomie_min_km} km of range exempt until 2024, then 200 kg up to ${h.pct(P.malus_masse.phev.plafond_part_masse, 0)} of the mass; ${P.malus_masse.famille.kg_par_enfant} kg per child for a large family (L421-81). Both maluses together never exceed the cap of that year’s CO₂ scale (L421-74).`)}</p>
+
+    <h2>{L('Véhicule importé d’occasion', 'Used imported vehicle')}</h2>
+    <p>{L('Les deux malus sont réduits d’un coefficient de décote fonction de l’âge en mois entamés (', 'Both maluses are reduced by a depreciation coefficient based on the age in started months (')}<a href={src('l421_7_2').url} {...ext}>L421-7-2</a>) : {dec.map((x, i) => <>{i > 0 && ' · '}{x.mois_max === null ? L('au-delà', 'beyond') : `≤ ${x.mois_max} ${L('mois', 'months')}`} {h.pct(x.reduction, 0)}</>)}. {L(`Malus nul si la première immatriculation est antérieure au ${h.date(P.decote_import.zero_avant)} (L421-60, L421-73).`, `No malus if first registered before ${h.date(P.decote_import.zero_avant)} (L421-60, L421-73).`)}</p>
+
+    <h2>{L('Puissance fiscale', 'Fiscal horsepower')}</h2>
+    <p>{L(`Voitures immatriculées depuis le ${h.date(P.puissance_fiscale.depuis)} : PA = ${h.num(P.puissance_fiscale.a, 2)} × (kW/100)² + ${h.num(P.puissance_fiscale.b, 2)} × (kW/100) + ${h.num(P.puissance_fiscale.c, 2)}, arrondie à l’unité (`, `Cars registered since ${h.date(P.puissance_fiscale.depuis)}: PA = ${h.num(P.puissance_fiscale.a, 2)} × (kW/100)² + ${h.num(P.puissance_fiscale.b, 2)} × (kW/100) + ${h.num(P.puissance_fiscale.c, 2)}, rounded to the unit (`)}<a href={src('l421_16').url} {...ext}>L421-16</a>). {L('Deux-roues thermiques : barème de la cylindrée (', 'Petrol two-wheelers: engine-size scale (')}<a href={src('l421_17').url} {...ext}>L421-17</a>). {L('La valeur de la case P.6 fait foi (L421-22).', 'The value in box P.6 is what counts (L421-22).')}</p>
+
+    <h2>{L('Ce que le calcul ne couvre pas', 'What the calculation does not cover')}</h2>
+    <ul>
+      <li>{L('Le barème NEDC (L421-63) des voitures importées mises en circulation entre 2015 et 2019, et le barème en puissance (L421-64) des véhicules sans réception européenne : le calculateur le signale au lieu d’inventer un montant.', 'The NEDC scale (L421-63) for imported cars first registered between 2015 and 2019, and the horsepower scale (L421-64) for vehicles without EU type approval: the calculator says so instead of inventing an amount.')}</li>
+      <li>{L('L’ancienne formule de puissance des voitures immatriculées avant 2021 (article A421-16, publiée sous forme d’image au Journal officiel) : non lue, donc jamais utilisée.', 'The former horsepower formula for cars registered before 2021 (article A421-16, published as an image in the Official Journal): not read, so never used.')}</li>
+      <li>{L('La composante d’usage de la décote prévue à partir de 2027 (L421-7-3), dont le texte n’a pas été lu ; les abattements des véhicules de huit places détenus par une personne morale (L421-66, L421-77).', 'The usage component of the depreciation due from 2027 (L421-7-3), whose text was not read; allowances for eight-seat vehicles held by a company (L421-66, L421-77).')}</li>
+      <li>{L(`L’arrêté de 2015 qui fixe la redevance de ${h.eur2(P.national.redevance)} n’a pas été ouvert : le montant vient de service-public.gouv.fr et du simulateur de l’État.`, `The 2015 order setting the ${h.eur2(P.national.redevance)} fee was not opened: the amount comes from service-public.gouv.fr and the State’s simulator.`)}</li>
+    </ul>
+
+    <h2>{L('Contrôles', 'Checks')}</h2>
+    <p>{L('Chaque build rejoue des cas calculés à la main : taxe régionale par région, majoration IDFM avant et après le 1er mars 2026, moitié à dix ans, moto et cyclomoteur, adresse et duplicata, malus aux bornes des barèmes 2026 et 2027, exemple officiel de 1 950 kg, plafond commun, décote d’un import. Un écart bloque la publication. ', 'Every build replays hand-checked cases: regional tax by region, IDFM surcharge before and after 1 March 2026, half rate at ten years, motorbike and moped, address and duplicate, malus at the edges of the 2026 and 2027 scales, the official 1,950 kg example, the shared cap, an import’s depreciation. Any gap blocks publication. ')}{L('Signaler une erreur : ', 'Report an error: ')}<a href={route('contact', lang)}>{L('contact', 'contact')}</a> · <a href={route('editorial', lang)}>{L('charte éditoriale', 'editorial policy')}</a>.</p>
+    <p class="text-sm text-navy-600">{L('Mis à jour le', 'Updated on')} <time datetime={LAST_UPDATED}>{h.date(LAST_UPDATED)}</time>.</p>
+  </div>
+</PageLayout>

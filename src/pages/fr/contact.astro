@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title={`Contact – ${SITE_NAMES[lang]}`} description="Écrire à l’éditeur de Carte Grise Calcul : signaler un tarif régional périmé, un écart avec le montant payé à l’ANTS, poser une question sur la méthode ou intégrer le calculateur." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Une adresse, lue chaque semaine : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Pas de standard téléphonique et aucun rappel commercial : le site ne vend ni démarche ni mise en relation.</p>
+    <h2>Signaler un écart</h2>
+    <p>Le plus utile : le montant que l’ANTS vous a demandé, case par case si vous l’avez, et le lien de partage du calculateur, qui reprend vos saisies et rien d’autre. Pour un tarif régional, joignez la délibération ou le communiqué de la région qui le fixe. Un écart confirmé est corrigé dans le fichier de paramètres puis transformé en test, comme le décrit la <a href={route('editorial', lang)}>charte éditoriale</a>.</p>
+    <h2>Ce que nous ne faisons pas</h2>
+    <p>Nous n’avons accès ni au système d’immatriculation, ni à votre dossier, ni à l’état d’une demande en cours. Pour un dossier bloqué, passez par l’assistance de l’ANTS ou un point numérique en préfecture ; pour faire la démarche à votre place, un professionnel de l’automobile habilité peut s’en charger contre des frais qui s’ajoutent aux taxes.</p>
+    <h2>Intégrer le calculateur</h2>
+    <p>Un club auto, un garage ou un journal peut placer notre calcul du coût de la carte grise sur son propre site, sans frais. Le bout de code à copier se trouve sur la page <a href={route('widget', lang)}>Intégrer le calculateur</a>.</p>
+    <h2>Éditeur</h2>
+    <LegalIdentity lang={lang} />
+    <p>{AUTHOR_NAME} répond du contenu de Carte Grise Calcul ; l’identité complète figure dans les <a href={route('terms', lang)}>mentions légales</a>. Page revue le {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>
